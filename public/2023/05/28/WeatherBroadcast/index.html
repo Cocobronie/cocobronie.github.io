@@ -1,0 +1,1540 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>一个天气预报APP | Cocobronie Bolg</title><meta name="keywords" content="Android APP"><meta name="author" content="Cocobronie"><meta name="copyright" content="Cocobronie"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="一个天气预报APP"><meta name="application-name" content="一个天气预报APP"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta name="description" content="Weather Broadcast APPCreated: December 3, 2022 12:43 AM 视频展示              一、主要功能1、主视图和细节视图在手机中包含主视图和细节视图，主视图显示连续多天的天气预报简讯，如图表 1所示，用户在主视图中点击某一天的天气简讯以后，跳出细节视图，显示用户选定当天天气的详细信息。   2、 支持平板显示在平板中使用Master-de">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个天气预报APP">
+<meta property="og:url" content="http://cocobronie.cn/2023/05/28/WeatherBroadcast/index.html">
+<meta property="og:site_name" content="Cocobronie Bolg">
+<meta property="og:description" content="Weather Broadcast APPCreated: December 3, 2022 12:43 AM 视频展示              一、主要功能1、主视图和细节视图在手机中包含主视图和细节视图，主视图显示连续多天的天气预报简讯，如图表 1所示，用户在主视图中点击某一天的天气简讯以后，跳出细节视图，显示用户选定当天天气的详细信息。   2、 支持平板显示在平板中使用Master-de">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cocobronie.cn/2023/05/28/WeatherBroadcast/mycover.png">
+<meta property="article:published_time" content="2023-05-28T03:07:30.000Z">
+<meta property="article:modified_time" content="2023-06-07T09:39:57.036Z">
+<meta property="article:author" content="Cocobronie">
+<meta property="article:tag" content="Android APP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cocobronie.cn/2023/05/28/WeatherBroadcast/mycover.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://cocobronie.cn/2023/05/28/WeatherBroadcast/"><link rel="preconnect" href="//npm.elemecdn.com"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2fd77e5365cf41923c0a38e1735ecb10";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  friends_vue_info: undefined,
+  navMusic: true,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#3b70fc","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://npm.elemecdn.com/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '一个天气预报APP',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-07 17:39:57'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="web_box"><div id="web_container"><div id="menu-mask"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button" tabindex="-1"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" href="https://cocobronie.cn/" title="博客" target="_blank"><img class="back-menu-item-icon" src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" href="https://github.com/Cocobronie/WeatherBroadcast" title="WeatherBroadcast" target="_blank"><img class="back-menu-item-icon" src="/img/weather.ico" alt="WeatherBroadcast"/><span class="back-menu-item-text">WeatherBroadcast</span></a><a class="back-menu-item" href="https://github.com/Cocobronie/CardSpending" title="CardSpending" target="_blank"><img class="back-menu-item-icon" src="/img/card.ico" alt="CardSpending"/><span class="back-menu-item-text">CardSpending</span></a><a class="back-menu-item" href="https://github.com/Cocobronie/ResumeWeb" title="ResumeWeb" target="_blank"><img class="back-menu-item-icon" src="/img/resume.ico" alt="ResumeWeb"/><span class="back-menu-item-text">ResumeWeb</span></a><a class="back-menu-item" href="https://github.com/Cocobronie/MyNFC" title="MyNFC" target="_blank"><img class="back-menu-item-icon" src="/img/nfc.ico" alt="MyNFC"/><span class="back-menu-item-text">MyNFC</span></a></div></div></div></div><a id="site-name" href="/"><div class="title">Cocobronie Bolg</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="darkmode_navswitch"><a class="darkmode_switchbutton" type="button" href="javascript:void(0);" title="浅色和深色模式转换" onclick="anzhiyu.switchDarkMode()"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke" style="font-size: 1.3rem"></i></a></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Android-APP/"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Android APP</span></a></span></div></div><h1 class="post-title">一个天气预报APP</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-28T03:07:30.000Z" title="发表于 2023-05-28 11:07:30">2023-05-28</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-07T09:39:57.036Z" title="更新于 2023-06-07 17:39:57">2023-06-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">3.3k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator"></span><span class="post-meta-pv-cv" id="" data-flag-title="一个天气预报APP"><i class="anzhiyufont anzhiyu-icon-fw-eye post-meta-icon"></i><span class="post-meta-label" title="阅读量">阅读量:</span><span id="busuanzi_value_page_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/2023/05/28/WeatherBroadcast/mycover.png"></div></header><main class="layout" id="content-inner"><div id="post"><div class="post-ai-description"><div class="ai-title"><i class="anzhiyufont anzhiyu-icon-bilibili"></i><div class="ai-title-text">AI-摘要</div><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i><div id="ai-tag">Tianli GPT</div></div><div class="ai-explanation">AI初始化中...</div><div class="ai-btn-box"><div class="ai-btn-item">介绍自己</div><div class="ai-btn-item">生成本文简介</div><div class="ai-btn-item">推荐相关文章</div><div class="ai-btn-item">前往主页</div><div class="ai-btn-item" id="go-tianli-blog">前往tianli博客</div></div><script data-pjax>(function(){
+  // 当前随机到的ai摘要到index
+  let lastAiRandomIndex = -1;
+  let animationRunning = true; // 标志变量，控制动画函数的运行
+  // 当前gpt模式
+  let mode = "tianli"
+  // 刷新点击次数
+  let refreshNum = 0
+  // 记录上一次传递给aiAbstract的参数
+  let prevParam;
+  const aiTitleRefreshIcon = document.querySelector(".ai-title .anzhiyufont.anzhiyu-icon-arrow-rotate-right")
+  const explanation = document.querySelector(".ai-explanation");
+  const post_ai = document.querySelector(".post-ai-description");
+  let ai_str = "";
+  let ai_str_length = "";
+  let delay_init = 600;
+  let i = 0;
+  let j = 0;
+  let sto = [];
+  let elapsed = 0;
+  const animate = timestamp => {
+    if (!animationRunning) {
+      return; // 动画函数停止运行
+    }
+    if (!animate.start) animate.start = timestamp;
+    elapsed = timestamp - animate.start;
+    if (elapsed >= 20) {
+      animate.start = timestamp;
+      if (i < ai_str_length - 1) {
+        let char = ai_str.charAt(i + 1);
+        let delay = /[,.，。!?！？]/.test(char) ? 150 : 20;
+        if (explanation.firstElementChild) {
+          explanation.removeChild(explanation.firstElementChild);
+        }
+        explanation.innerHTML += char;
+        let div = document.createElement("div");
+        div.className = "ai-cursor";
+        explanation.appendChild(div);
+        i++;
+        if (delay === 150) {
+          document.querySelector(".ai-explanation .ai-cursor").style.opacity = "0";
+        }
+        if (i === ai_str_length - 1) {
+          observer.disconnect(); // 暂停监听
+          explanation.removeChild(explanation.firstElementChild);
+        }
+        sto[0] = setTimeout(() => {
+          requestAnimationFrame(animate);
+        }, delay);
+      }
+    } else {
+      requestAnimationFrame(animate);
+    }
+  };
+  const observer = new IntersectionObserver(
+    entries => {
+      let isVisible = entries[0].isIntersecting;
+      animationRunning = isVisible; // 标志变量更新
+      if (animationRunning) {
+        delay_init = i === 0 ? 200 : 20;
+        sto[1] = setTimeout(() => {
+          if (j) {
+            i = 0;
+            j = 0;
+          }
+          if (i === 0) {
+            explanation.innerHTML = ai_str.charAt(0);
+          }
+          requestAnimationFrame(animate);
+        }, delay_init);
+      }
+    },
+    { threshold: 0 }
+  );
+  function clearSTO() {
+    if (sto.length) {
+      sto.forEach(item => {
+        if (item) {
+          clearTimeout(item);
+        }
+      });
+    }
+  }
+  function startAI(str, df = true) {
+    i = 0; //重置计数器
+    j = 1;
+    clearSTO();
+    animationRunning = false;
+    elapsed = 0;
+    observer.disconnect(); // 暂停上一次监听
+    explanation.innerHTML = df ? "生成中. . ." : "请等待. . .";
+    ai_str = str;
+    ai_str_length = ai_str.length;
+    observer.observe(post_ai); //启动新监听
+  }
+
+  async function aiAbstract(num = 1000) {
+    i = 0; //重置计数器
+    j = 1;
+    clearSTO();
+    animationRunning = false;
+    elapsed = 0;
+    observer.disconnect(); // 暂停上一次监听
+    if (mode === "tianli") {
+      num = Math.max(10, Math.min(2000, num));
+      const options = {
+        key: "vYveUXFA59rjhbgO2pTg",
+        Referer: "/chat vYveUXFA59rjhbgO2pTg http://www.cocobronie.cn/"
+      };
+      const truncateDescription = ("一个天气预报APP" + "Weather Broadcast APP, 视频展示, 一、主要功能, 1、主视图和细节视图, 2、 支持平板显示, 3、主视图菜单栏功能实现, 4、细节视图菜单栏功能实现, 5、SQLite对天气预报数据进行持久化保存, 6、调用Web API获取天气预报数据, 二、开发细节, 1、UI设设计, 2、MainActivity+平板功能实现, 功能, 知识点, Fragment回调接口的实现, 3、MainFragment, 功能, 知识点, 要点, 4、DetailActivity, 功能, 知识点：FragmentAugment实现, 5、PagerActivity, 功能, 知识点：ViewPager实现, Bug, 代码, 6、SQLlite+WeatherLab单例封装, 功能, 知识点, 报错 table WeatherTab has no column named min_temp, 7、Share功能, 功能, 知识点, 代码, 8、Notification——IntentService的子类, 功能, 知识点, 后台服务：IntentService, Notification, Broadcast Intent（待实现）, 9、Map功能, 功能, 知识点, Bug视频展示一主要功能主视图和细节视图在手机中包含主视图和细节视图主视图显示连续多天的天气预报简讯如图表所示用户在主视图中点击某一天的天气简讯以后跳出细节视图显示用户选定当天天气的详细信息支持平板显示在平板中使用视图当用户点击某一天的天气预览以后直接在界面右边显示当天天气的详细信息如图表所示主视图菜单栏功能实现主视图中包含和选项通过选项可以调用手机中安装的地图应用显示当前天气预报所对应的位置如图表所示用户可以通过选项可以修改天气预报的位置温度的单位华氏度摄氏度以及是否开启天气通知如图表所示如果选项中的天气通知选项打开会定期发送通知消息其中显示当天的天气简讯如图表所示细节视图菜单栏功能实现细节视图菜单中包含分享和选项用户可以通过分享选项通过其他应用邮件短信等将天气详细信息分享给别人如图表所示对天气预报数据进行持久化保存利用对天气预报数据进行持久化保存如果网络不可用的情况下从中提取天气预报数据调用获取天气预报数据二开发细节设设计平板功能实现功能判断设备是并托管到不同的文件中平板功能实现在平板中使用视图当用户点击某一天的天气预览以后直接在界面右边显示当天天气的详细信息实现方式一中的中将添加到中缺点破坏的封装实现方式二在中定义回调接口委托托管来完成那些不应该由处理的任务知识点别名资源指向了不同的资源文件回调接口回调接口的实现添加回调接口回调接口回调接口需要托管实现在附加给时调用清空变量在中实现实现其托管的回调接口如果是启动新的如果是将放入中在中调用跳转到细节视图使用回调方法功能实例化单例实例化数据库实例化监听用户点击并跳转到从网上获取数据并显示在组件中监听的点击事件知识点实例化及其逻辑实现实例化并实现监听启动后台线程实现数据获取跳转到并传递数据实现消息推送实现数据持久化要点从跳转到并传递数据调用启动并传递参数功能托管传递数据知识点实现获取数据并传递给其托管的的两种方法直接获取数据直接传递由获取数据是对象获取传入的信息绑定创建直接传递数据缺点破坏了的封装不再是可以复用的单元使用由获取数据参数将存储到的某个地方而不是中每个实例都有一个对象对象包含键值对可以将参数添加到对象中附加给添加功能实现左右滑动屏幕知识点实现步骤创建类以为根视图定义包含的视图层级结构在类中关联使用及其只能显示天的修复我把数据库课封装在一起了代码启动并传递参数获取传入的信息设置点击之后显示的界面创建实例化单例封装功能实现数据持久化知识点单例如何实例化在类中声明为静态变量并且实例化单例的意思在类里已经实例化了这里将数据库也实现单例打开数据库如果不存在就先调用创建实现数据库类定义描述数据表元素的常量类创建数据库名叫修改改用数据库存储数据实现子类帮助查询数据库创建子类用于查询实例化键值储存类只能处理数据键值储存类只能处理数据删除数据库之后记得立马要一个不然报错判断数据库是否为空如果数据库不为空报错原因数据表创建语句中字段前没有空格表中插入数据找不到字段奋斗的小民工的博客博客功能功能点击分享键分享天气知识点隐式的组成要执行的操作待访问数据的位置操作涉及的数据类型可选类别代码要执行的操作操作涉及的数据类型待访问数据的位置的子类功能定期发送通知给用户显示在状态栏中保证用户在使用应用时不出现新结果通知知识点后台服务保存数据延迟运行通知消息后台服务创建类继承中配置注意构造函数不能带参数在的中添加服务启动代码启动服务在没有运行的情况下为在后台运行的服务需要想个办法启动它使用可以发送的系统服务使用打包一个我想启动服务在中实现一个启停定时器的添加定时方法设置时间间隔是分钟创建一个用来启动服务的设置定时器使用管理定时器在中设置定时开闭是是开启后台服务启动定时器发送通知消息创建对象完整的包括首次显示通知消息时在状态栏上显示图标在之后状态栏上不显示图标是通知抽屉的一个视图待触发的用户点击抽屉中的通知消息触发接收一个设置通知消息不可变的一定要设置待办消息浅谈通知频道从开始应用显示通知时必须为通知指定一个构造方法需要三个参数是自定义的字符串第二个参数是频道的名称第三个是优先级创建完之后还需要使用方法注册到系统中待实现功能功能点击启动手机中的知识点隐式的组成无法显示定位").trim().substring(0, num)
+
+      const queryParams = `key=${options.key}&content=${truncateDescription}`;
+      const requestOptions = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Referer: options.Referer
+        },
+      };
+      try {
+        let animationInterval = null
+        if (animationInterval) clearInterval(animationInterval);
+        animationInterval = setInterval(() => {
+          const animationText = "生成中" + ".".repeat(j);
+          explanation.innerHTML = animationText;
+          j = (j % 3) + 1; // 在 1、2、3 之间循环
+        }, 500);
+        const response = await fetch(`https://summary.tianli0.top/?${queryParams}`, requestOptions);
+        const result = await response.json();
+        const summary = result.summary.trim();
+        setTimeout(() => {
+          aiTitleRefreshIcon.style.opacity = "1";
+        }, 300)
+        startAI(summary);
+        clearInterval(animationInterval)
+
+      } catch (error) {
+        console.error(error);
+      }
+    } else {
+      const strArr = "true".split(",").map(item => item.trim()); // 将字符串转换为数组，去除每个字符串前后的空格
+      if (strArr.length !== 1) {
+        let randomIndex = Math.floor(Math.random() * strArr.length); // 随机生成一个索引
+        while (randomIndex === lastAiRandomIndex) { // 如果随机到了上次的索引
+          randomIndex = Math.floor(Math.random() * strArr.length); // 再次随机
+        }
+        lastAiRandomIndex = randomIndex; // 更新上次随机到的索引
+        startAI(strArr[randomIndex]);
+      } else {
+        startAI(strArr[0])
+      }
+      setTimeout(() => {
+        aiTitleRefreshIcon.style.opacity = "1";
+      }, 600)
+    }
+  }
+
+  function aiRecommend() {
+    i = 0; //重置计数器
+    j = 1;
+    clearSTO();
+    animationRunning = false;
+    elapsed = 0;
+    explanation.innerHTML = "生成中. . .";
+    ai_str = "";
+    ai_str_length = "";
+    observer.disconnect(); // 暂停上一次监听
+    sto[2] = setTimeout(() => {
+      explanation.innerHTML = recommendList();
+    }, 600);
+  }
+  function aiGoHome() {
+    startAI("正在前往博客主页...", false);
+    sto[2] = setTimeout(() => {
+      pjax.loadUrl("/");
+    }, 1000);
+  }
+  const ai_btn_item = document.querySelectorAll(".ai-btn-item");
+  function Introduce() {
+    if (mode == "tianli") {
+      startAI("我是文章辅助AI: TianliGPT，点击下方的按钮，让我生成本文简介、推荐相关文章等。")
+    } else {
+      startAI("我是文章辅助AI: AnZhiYu GPT，点击下方的按钮，让我生成本文简介、推荐相关文章等。")
+    }
+  }
+  function aiTitleRefreshIconClick() {
+    aiTitleRefreshIcon.click()
+  }
+  const aiFunctions = [Introduce, aiTitleRefreshIconClick, aiRecommend, aiGoHome];
+  ai_btn_item.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      aiFunctions[index]();
+    });
+  });
+
+  function recommendList() {
+    let thumbnail = document.querySelectorAll('.relatedPosts-list a');
+    if (!thumbnail.length) {
+      const cardRecentPost = document.querySelector('.card-widget.card-recent-post'); 
+      if (!cardRecentPost) return '';
+
+      thumbnail = cardRecentPost.querySelectorAll('.aside-list-item a');
+
+      let list = '';
+      for (let i = 0; i < thumbnail.length; i++) {
+        const item = thumbnail[i];
+        list += `<div class="ai-recommend-item"><span class="index">${i + 1}：</span><a href="javascript:;" onclick="pjax.loadUrl('${item.href}')" title="${item.title}" data-pjax-state="">${item.title}</a></div>`;
+      }
+      
+      return `很抱歉，无法找到类似的文章，你也可以看看本站最新发布的文章：<br /><div class="ai-recommend">${list}</div>`;
+    }
+
+    let list = '';
+    for (let i = 0; i < thumbnail.length; i++) {
+      const item = thumbnail[i];
+      list += `<div class="ai-recommend-item"><span>推荐${i + 1}：</span><a href="javascript:;" onclick="pjax.loadUrl('${item.href}')" title="${item.title}" data-pjax-state="">${item.title}</a></div>`;
+    }
+
+    return `推荐文章：<br /><div class="ai-recommend">${list}</div>`;
+  }
+
+
+  function changeShowMode() {
+    if (mode === "tianli") {
+      mode = "local";
+      document.getElementById("ai-tag").innerHTML = "AnZhiYu GPT";
+      aiAbstract(1000);
+    } else {
+      mode = "tianli";
+      document.getElementById("ai-tag").innerHTML = "Tianli GPT";
+
+      const truncateDescription = ("" + "Weather Broadcast APP, 视频展示, 一、主要功能, 1、主视图和细节视图, 2、 支持平板显示, 3、主视图菜单栏功能实现, 4、细节视图菜单栏功能实现, 5、SQLite对天气预报数据进行持久化保存, 6、调用Web API获取天气预报数据, 二、开发细节, 1、UI设设计, 2、MainActivity+平板功能实现, 功能, 知识点, Fragment回调接口的实现, 3、MainFragment, 功能, 知识点, 要点, 4、DetailActivity, 功能, 知识点：FragmentAugment实现, 5、PagerActivity, 功能, 知识点：ViewPager实现, Bug, 代码, 6、SQLlite+WeatherLab单例封装, 功能, 知识点, 报错 table WeatherTab has no column named min_temp, 7、Share功能, 功能, 知识点, 代码, 8、Notification——IntentService的子类, 功能, 知识点, 后台服务：IntentService, Notification, Broadcast Intent（待实现）, 9、Map功能, 功能, 知识点, Bug视频展示一主要功能主视图和细节视图在手机中包含主视图和细节视图主视图显示连续多天的天气预报简讯如图表所示用户在主视图中点击某一天的天气简讯以后跳出细节视图显示用户选定当天天气的详细信息支持平板显示在平板中使用视图当用户点击某一天的天气预览以后直接在界面右边显示当天天气的详细信息如图表所示主视图菜单栏功能实现主视图中包含和选项通过选项可以调用手机中安装的地图应用显示当前天气预报所对应的位置如图表所示用户可以通过选项可以修改天气预报的位置温度的单位华氏度摄氏度以及是否开启天气通知如图表所示如果选项中的天气通知选项打开会定期发送通知消息其中显示当天的天气简讯如图表所示细节视图菜单栏功能实现细节视图菜单中包含分享和选项用户可以通过分享选项通过其他应用邮件短信等将天气详细信息分享给别人如图表所示对天气预报数据进行持久化保存利用对天气预报数据进行持久化保存如果网络不可用的情况下从中提取天气预报数据调用获取天气预报数据二开发细节设设计平板功能实现功能判断设备是并托管到不同的文件中平板功能实现在平板中使用视图当用户点击某一天的天气预览以后直接在界面右边显示当天天气的详细信息实现方式一中的中将添加到中缺点破坏的封装实现方式二在中定义回调接口委托托管来完成那些不应该由处理的任务知识点别名资源指向了不同的资源文件回调接口回调接口的实现添加回调接口回调接口回调接口需要托管实现在附加给时调用清空变量在中实现实现其托管的回调接口如果是启动新的如果是将放入中在中调用跳转到细节视图使用回调方法功能实例化单例实例化数据库实例化监听用户点击并跳转到从网上获取数据并显示在组件中监听的点击事件知识点实例化及其逻辑实现实例化并实现监听启动后台线程实现数据获取跳转到并传递数据实现消息推送实现数据持久化要点从跳转到并传递数据调用启动并传递参数功能托管传递数据知识点实现获取数据并传递给其托管的的两种方法直接获取数据直接传递由获取数据是对象获取传入的信息绑定创建直接传递数据缺点破坏了的封装不再是可以复用的单元使用由获取数据参数将存储到的某个地方而不是中每个实例都有一个对象对象包含键值对可以将参数添加到对象中附加给添加功能实现左右滑动屏幕知识点实现步骤创建类以为根视图定义包含的视图层级结构在类中关联使用及其只能显示天的修复我把数据库课封装在一起了代码启动并传递参数获取传入的信息设置点击之后显示的界面创建实例化单例封装功能实现数据持久化知识点单例如何实例化在类中声明为静态变量并且实例化单例的意思在类里已经实例化了这里将数据库也实现单例打开数据库如果不存在就先调用创建实现数据库类定义描述数据表元素的常量类创建数据库名叫修改改用数据库存储数据实现子类帮助查询数据库创建子类用于查询实例化键值储存类只能处理数据键值储存类只能处理数据删除数据库之后记得立马要一个不然报错判断数据库是否为空如果数据库不为空报错原因数据表创建语句中字段前没有空格表中插入数据找不到字段奋斗的小民工的博客博客功能功能点击分享键分享天气知识点隐式的组成要执行的操作待访问数据的位置操作涉及的数据类型可选类别代码要执行的操作操作涉及的数据类型待访问数据的位置的子类功能定期发送通知给用户显示在状态栏中保证用户在使用应用时不出现新结果通知知识点后台服务保存数据延迟运行通知消息后台服务创建类继承中配置注意构造函数不能带参数在的中添加服务启动代码启动服务在没有运行的情况下为在后台运行的服务需要想个办法启动它使用可以发送的系统服务使用打包一个我想启动服务在中实现一个启停定时器的添加定时方法设置时间间隔是分钟创建一个用来启动服务的设置定时器使用管理定时器在中设置定时开闭是是开启后台服务启动定时器发送通知消息创建对象完整的包括首次显示通知消息时在状态栏上显示图标在之后状态栏上不显示图标是通知抽屉的一个视图待触发的用户点击抽屉中的通知消息触发接收一个设置通知消息不可变的一定要设置待办消息浅谈通知频道从开始应用显示通知时必须为通知指定一个构造方法需要三个参数是自定义的字符串第二个参数是频道的名称第三个是优先级创建完之后还需要使用方法注册到系统中待实现功能功能点击启动手机中的知识点隐式的组成无法显示定位").trim().substring(0, 1000);
+      let value = Math.floor(Math.random() * 3) + 1000;
+      while (value === prevParam || truncateDescription.length - value === prevParam) {
+        value = Math.floor(Math.random() * 3) + 1000;
+      }
+      aiTitleRefreshIcon.style.opacity = "0.2";
+      aiTitleRefreshIcon.style.transitionDuration = "0.3s";
+      aiTitleRefreshIcon.style.transform = "rotate(" + 360 * refreshNum + "deg)";
+      if (truncateDescription.length <= 1000) {
+        let param = truncateDescription.length - Math.floor(Math.random() * 3);
+        while (param === prevParam) {
+          param = truncateDescription.length - Math.floor(Math.random() * 3);
+        }
+        aiAbstract(param);
+        prevParam = param;
+      } else {
+        aiAbstract(value);
+        prevParam = value;
+      }
+      refreshNum++;
+    }
+  }
+
+  //- 监听tag点击事件
+  document.getElementById("ai-tag").addEventListener("click", () => {
+    if (mode === "tianli") {
+      document.querySelectorAll(".ai-btn-item").forEach(item => item.style.display = "none");
+      document.getElementById("go-tianli-blog").style.display = "block";
+      startAI("你好，我是Tianli开发的摘要生成助理TianliGPT，是一个基于GPT-4的生成式AI。我在这里只负责摘要的预生成和显示，你无法与我直接沟通，如果你也需要一个这样的AI摘要接口，可以在下方购买。（暂未开放购买，敬请期待）")
+    } else {
+      document.getElementById("go-tianli-blog").style.display = "none";
+      startAI("你好，我是本站摘要生成助理AnZhiYu GPT，是一个基于GPT-4的生成式AI。我在这里只负责摘要的预生成和显示，你无法与我直接沟通。")
+    }
+
+  });
+
+  aiTitleRefreshIcon.addEventListener("click", () => {
+    const truncateDescription = ("" + "Weather Broadcast APP, 视频展示, 一、主要功能, 1、主视图和细节视图, 2、 支持平板显示, 3、主视图菜单栏功能实现, 4、细节视图菜单栏功能实现, 5、SQLite对天气预报数据进行持久化保存, 6、调用Web API获取天气预报数据, 二、开发细节, 1、UI设设计, 2、MainActivity+平板功能实现, 功能, 知识点, Fragment回调接口的实现, 3、MainFragment, 功能, 知识点, 要点, 4、DetailActivity, 功能, 知识点：FragmentAugment实现, 5、PagerActivity, 功能, 知识点：ViewPager实现, Bug, 代码, 6、SQLlite+WeatherLab单例封装, 功能, 知识点, 报错 table WeatherTab has no column named min_temp, 7、Share功能, 功能, 知识点, 代码, 8、Notification——IntentService的子类, 功能, 知识点, 后台服务：IntentService, Notification, Broadcast Intent（待实现）, 9、Map功能, 功能, 知识点, Bug视频展示一主要功能主视图和细节视图在手机中包含主视图和细节视图主视图显示连续多天的天气预报简讯如图表所示用户在主视图中点击某一天的天气简讯以后跳出细节视图显示用户选定当天天气的详细信息支持平板显示在平板中使用视图当用户点击某一天的天气预览以后直接在界面右边显示当天天气的详细信息如图表所示主视图菜单栏功能实现主视图中包含和选项通过选项可以调用手机中安装的地图应用显示当前天气预报所对应的位置如图表所示用户可以通过选项可以修改天气预报的位置温度的单位华氏度摄氏度以及是否开启天气通知如图表所示如果选项中的天气通知选项打开会定期发送通知消息其中显示当天的天气简讯如图表所示细节视图菜单栏功能实现细节视图菜单中包含分享和选项用户可以通过分享选项通过其他应用邮件短信等将天气详细信息分享给别人如图表所示对天气预报数据进行持久化保存利用对天气预报数据进行持久化保存如果网络不可用的情况下从中提取天气预报数据调用获取天气预报数据二开发细节设设计平板功能实现功能判断设备是并托管到不同的文件中平板功能实现在平板中使用视图当用户点击某一天的天气预览以后直接在界面右边显示当天天气的详细信息实现方式一中的中将添加到中缺点破坏的封装实现方式二在中定义回调接口委托托管来完成那些不应该由处理的任务知识点别名资源指向了不同的资源文件回调接口回调接口的实现添加回调接口回调接口回调接口需要托管实现在附加给时调用清空变量在中实现实现其托管的回调接口如果是启动新的如果是将放入中在中调用跳转到细节视图使用回调方法功能实例化单例实例化数据库实例化监听用户点击并跳转到从网上获取数据并显示在组件中监听的点击事件知识点实例化及其逻辑实现实例化并实现监听启动后台线程实现数据获取跳转到并传递数据实现消息推送实现数据持久化要点从跳转到并传递数据调用启动并传递参数功能托管传递数据知识点实现获取数据并传递给其托管的的两种方法直接获取数据直接传递由获取数据是对象获取传入的信息绑定创建直接传递数据缺点破坏了的封装不再是可以复用的单元使用由获取数据参数将存储到的某个地方而不是中每个实例都有一个对象对象包含键值对可以将参数添加到对象中附加给添加功能实现左右滑动屏幕知识点实现步骤创建类以为根视图定义包含的视图层级结构在类中关联使用及其只能显示天的修复我把数据库课封装在一起了代码启动并传递参数获取传入的信息设置点击之后显示的界面创建实例化单例封装功能实现数据持久化知识点单例如何实例化在类中声明为静态变量并且实例化单例的意思在类里已经实例化了这里将数据库也实现单例打开数据库如果不存在就先调用创建实现数据库类定义描述数据表元素的常量类创建数据库名叫修改改用数据库存储数据实现子类帮助查询数据库创建子类用于查询实例化键值储存类只能处理数据键值储存类只能处理数据删除数据库之后记得立马要一个不然报错判断数据库是否为空如果数据库不为空报错原因数据表创建语句中字段前没有空格表中插入数据找不到字段奋斗的小民工的博客博客功能功能点击分享键分享天气知识点隐式的组成要执行的操作待访问数据的位置操作涉及的数据类型可选类别代码要执行的操作操作涉及的数据类型待访问数据的位置的子类功能定期发送通知给用户显示在状态栏中保证用户在使用应用时不出现新结果通知知识点后台服务保存数据延迟运行通知消息后台服务创建类继承中配置注意构造函数不能带参数在的中添加服务启动代码启动服务在没有运行的情况下为在后台运行的服务需要想个办法启动它使用可以发送的系统服务使用打包一个我想启动服务在中实现一个启停定时器的添加定时方法设置时间间隔是分钟创建一个用来启动服务的设置定时器使用管理定时器在中设置定时开闭是是开启后台服务启动定时器发送通知消息创建对象完整的包括首次显示通知消息时在状态栏上显示图标在之后状态栏上不显示图标是通知抽屉的一个视图待触发的用户点击抽屉中的通知消息触发接收一个设置通知消息不可变的一定要设置待办消息浅谈通知频道从开始应用显示通知时必须为通知指定一个构造方法需要三个参数是自定义的字符串第二个参数是频道的名称第三个是优先级创建完之后还需要使用方法注册到系统中待实现功能功能点击启动手机中的知识点隐式的组成无法显示定位").trim().substring(0, 1000);
+    let value = Math.floor(Math.random() * 3) + 1000;
+    while (value === prevParam || truncateDescription.length - value === prevParam) {
+      value = Math.floor(Math.random() * 3) + 1000;
+    }
+    aiTitleRefreshIcon.style.opacity = "0.2";
+    aiTitleRefreshIcon.style.transitionDuration = "0.3s";
+    aiTitleRefreshIcon.style.transform = "rotate(" + 360 * refreshNum + "deg)";
+    if (truncateDescription.length <= 1000) {
+      let param = truncateDescription.length - Math.floor(Math.random() * 3);
+      while (param === prevParam) {
+        param = truncateDescription.length - Math.floor(Math.random() * 3);
+      }
+      aiAbstract(param);
+      prevParam = param;
+    } else {
+      aiAbstract(value);
+      prevParam = value;
+    }
+    showAiBtn();
+    refreshNum++;
+  });
+
+  document.getElementById("go-tianli-blog").addEventListener("click", () => {
+    window.open("https://afdian.net/item/886a79d4db6711eda42a52540025c377", "_blank");
+  });
+  
+  if (false) {
+    document.getElementById("ai-Toggle").addEventListener("click", () => {
+      changeShowMode()
+    });
+  }
+
+  function showAiBtn() {
+    document.querySelectorAll(".ai-btn-item").forEach(item => {
+      if (item.id !== "go-tianli-blog") {
+        item.style.display = "block";
+      }
+      if (item.id === "go-tianli-blog") {
+        item.style.display = "none";
+      }
+    });
+  }
+
+
+  aiAbstract();
+  showAiBtn()
+})()</script></div><article class="post-content" id="article-container"><h1 id="Weather-Broadcast-APP"><a href="#Weather-Broadcast-APP" class="headerlink" title="Weather Broadcast APP"></a>Weather Broadcast APP</h1><p>Created: December 3, 2022 12:43 AM</p>
+<h1 id="视频展示"><a href="#视频展示" class="headerlink" title="视频展示"></a>视频展示</h1><video controls preload height="400px"> 
+    <source src="/images/WeatherBroadcast/23-05-28-11-33-28.mp4" type="video/mp4"> 
+</video>
+
+
+
+
+
+<h1 id="一、主要功能"><a href="#一、主要功能" class="headerlink" title="一、主要功能"></a>一、主要功能</h1><h2 id="1、主视图和细节视图"><a href="#1、主视图和细节视图" class="headerlink" title="1、主视图和细节视图"></a>1、<strong>主视图</strong>和<strong>细节视图</strong></h2><p>在手机中包含<strong>主视图</strong>和<strong>细节视图</strong>，<strong>主视图</strong>显示连续多天的天气预报简讯，如图表 1所示，用户在主视图中点击某一天的天气简讯以后，跳出<strong>细节视图</strong>，显示用户选定当天天气的详细信息。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/WeatherBroadcast/image-20230528112048700.png" alt="image-20230528112048700" style="zoom:33%;">
+
+<h2 id="2、-支持平板显示"><a href="#2、-支持平板显示" class="headerlink" title="2、 支持平板显示"></a>2、 支持平板显示</h2><p>在<strong>平板</strong>中使用<strong>Master-detail</strong>视图，当用户点击某一天的天气预览以后，直接在界面右边显示当天天气的详细信息，如图表 3所示。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/WeatherBroadcast/image-20230528112110529.png" alt="image-20230528112110529" style="zoom:33%;">
+
+<h2 id="3、主视图菜单栏功能实现"><a href="#3、主视图菜单栏功能实现" class="headerlink" title="3、主视图菜单栏功能实现"></a>3、主视图菜单栏功能实现</h2><ul>
+<li><p>主视图中包含<strong>Map Location</strong>和<strong>setting</strong>选项，通过<strong>”Map location”</strong> 选项，可以调用手机中安装的地图应用显示当前天气预报所对应的位置，如图表 4所示，用户可以通过<strong>setting</strong>选项可以修改天气预报的位置，温度的单位（华氏度、摄氏度）以及是否开启天气通知，如图表 5所示。如果setting选项中的<strong>天气通知选项</strong>打开，会<strong>定期发送通知消息</strong>，其中显示当天的天气简讯，如图表 6所示。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/WeatherBroadcast/image-20230528112239798.png" alt="image-20230528112239798" style="zoom:33%;"></li>
+</ul>
+<h2 id="4、细节视图菜单栏功能实现"><a href="#4、细节视图菜单栏功能实现" class="headerlink" title="4、细节视图菜单栏功能实现"></a>4、细节视图菜单栏功能实现</h2><p>细节视图菜单中包含<strong>分享</strong>和<strong>setting选项</strong>，用户可以通过分享选项通过其他应用（邮件、短信等）将天气详细信息分享给别人。如图表 2所示。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/WeatherBroadcast/image-20230528112305880.png" alt="image-20230528112305880" style="zoom:57%;">
+
+<h2 id="5、SQLite对天气预报数据进行持久化保存"><a href="#5、SQLite对天气预报数据进行持久化保存" class="headerlink" title="5、SQLite对天气预报数据进行持久化保存"></a>5、SQLite对天气预报数据进行持久化保存</h2><p>利用SQLite对天气预报数据进行持久化保存，如果网络不可用的情况下，从SQLite中提取天气预报数据。</p>
+<h2 id="6、调用Web-API获取天气预报数据"><a href="#6、调用Web-API获取天气预报数据" class="headerlink" title="6、调用Web API获取天气预报数据"></a>6、调用Web API获取天气预报数据</h2><p>heweather：<a target="_blank" rel="noopener" href="https://www.heweather.com/documents/api/s6/weather-forecast">https://www.heweather.com/documents/api/s6/weather-forecast</a></p>
+<h1 id="二、开发细节"><a href="#二、开发细节" class="headerlink" title="二、开发细节"></a>二、开发细节</h1><h2 id="1、UI设设计"><a href="#1、UI设设计" class="headerlink" title="1、UI设设计"></a>1、UI设设计</h2><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/WeatherBroadcast/image-20230528112329509.png" alt="image-20230528112329509" style="zoom:50%;">
+
+<h2 id="2、MainActivity-平板功能实现"><a href="#2、MainActivity-平板功能实现" class="headerlink" title="2、MainActivity+平板功能实现"></a>2、MainActivity+平板功能实现</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a><strong>功能</strong></h3><ul>
+<li><p>判断设备是<code>phone</code>&#x2F;<code>paid</code>并托管到不同的<code>layout</code>文件中</p>
+</li>
+<li><p>平板功能实现：在<strong>平板</strong>中使用<strong>Master-detail</strong>视图，当用户点击某一天的天气预览以后，直接在界面右边显示当天天气的详细信息。</p>
+<ul>
+<li><p><strong>实现方式一：</strong><code>MainFragment.WeatherHolder</code>中的<code>onClick()</code>中将<code>DetailFragment</code>添加到<code>detailFragmentContainer</code>中。</p>
+<p>缺点：破坏fragment的封装</p>
+</li>
+<li><p><strong>实现方式二：</strong>在<code>fragment</code>中定义回调接口，委托托管<code>activity</code>来完成那些不应该由<code>fragment</code>处理的任务。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li><strong>别名资源</strong>指向了不同的资源文件</li>
+</ul>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/WeatherBroadcast/image-20230528112408350.png" alt="image-20230528112408350" style="zoom: 33%;">
+
+<ul>
+<li><strong>Fragment回调接口</strong></li>
+</ul>
+<h3 id="Fragment回调接口的实现"><a href="#Fragment回调接口的实现" class="headerlink" title="Fragment回调接口的实现"></a><strong>Fragment回调接口的实现</strong></h3><ul>
+<li><code>MainFragment</code>添加回调接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Callbacks mCallbacks;   <span class="comment">//回调接口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//回调接口:需要托管activity实现</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Callbacks</span>&#123;</span><br><span class="line">        <span class="keyword">void</span> <span class="title function_">onWeatherSelected</span><span class="params">(Weather weather)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//在fragment附加给activity时调用</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onAttach</span><span class="params">(Activity activity)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onAttach(activity);</span><br><span class="line">        mCallbacks = (Callbacks) activity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//清空变量</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onDetach</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onDetach();</span><br><span class="line">        mCallbacks = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>在<code>Mainactivity</code>中实现</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">        实现其托管fragment的回调接口</span></span><br><span class="line"><span class="comment">            1、如果是Phone：启动新的PagerActivity</span></span><br><span class="line"><span class="comment">            2、如果是paid：将DetailFragment放入detailFragmentContainer中</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onWeatherSelected</span><span class="params">(Weather weather)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (findViewById(R.id.detailFragmentContainer) == <span class="literal">null</span>) &#123;   <span class="comment">//Phone</span></span><br><span class="line">           <span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> PagerActivity.newIntent(<span class="built_in">this</span>,weather.getId());</span><br><span class="line">           startActivity(intent);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>                                                        <span class="comment">//Paid</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">Fragment</span> <span class="variable">newDetail</span> <span class="operator">=</span> DetailFragment.newInstance(weather.getId());</span><br><span class="line">            getSupportFragmentManager().beginTransaction().replace(R.id.detailFragmentContainer,newDetail).commit();</span><br><span class="line">        &#125;</span><br><span class="line">    **&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在<code>MainFragment</code>中调用</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(View v)</span> &#123;</span><br><span class="line">            <span class="comment">//跳转到细节视图</span></span><br><span class="line"><span class="comment">//            Intent intent = PagerActivity.newIntent(getActivity(), mWeather.getId());</span></span><br><span class="line"><span class="comment">//            startActivity(intent);</span></span><br><span class="line">            <span class="comment">//使用回调方法</span></span><br><span class="line">            mCallbacks.onWeatherSelected(mWeather);</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、MainFragment"><a href="#3、MainFragment" class="headerlink" title="3、MainFragment"></a>3、MainFragment</h2><h3 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h3><ul>
+<li>实例化单例</li>
+<li>实例化数据库</li>
+<li>实例化<code>RecyclerView</code></li>
+<li>监听用户点击，并跳转到<code>DetialActivity</code></li>
+<li>从网上获取数据，并显示在组件中</li>
+<li>监听<code>Menu</code>的点击事件</li>
+</ul>
+<h3 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li><code>RecyclerView</code>实例化及其逻辑实现</li>
+<li><code>Menu</code>实例化，并实现监听</li>
+<li>启动后台线程<code>AsyncTask</code>，实现数据获取</li>
+<li><code>Fragment</code>跳转到Activity并传递数据</li>
+<li><code>notification</code>实现消息推送</li>
+<li><code>SQLlite</code>实现数据持久化</li>
+</ul>
+<h3 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h3><p><strong>1、从<code>Fragment</code>跳转到<code>Activity</code>并传递数据</strong></p>
+<p><strong><code>MainFragment</code></strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调用Fragment.startActivity(Itent)</span></span><br><span class="line"><span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> DetailActivity.newIntent(getActivity(), mWeather.getId());</span><br><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure>
+
+<p><strong><code>DetailActivity</code></strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">EXTRA_WEATHER_ID</span> <span class="operator">=</span> <span class="string">&quot;com/example/weatherbroadcast.weather_id&quot;</span>;</span><br><span class="line"><span class="comment">//启动DetailActivity并传递参数</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Intent <span class="title function_">newIntent</span><span class="params">(Context packageContext, UUID weathereId)</span> &#123;</span><br><span class="line">    <span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Intent</span>(packageContext, DetailActivity.class);</span><br><span class="line">    intent.putExtra(EXTRA_WEATHER_ID, weathereId);</span><br><span class="line">    <span class="keyword">return</span> intent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、DetailActivity"><a href="#4、DetailActivity" class="headerlink" title="4、DetailActivity"></a>4、DetailActivity</h2><h3 id="功能-2"><a href="#功能-2" class="headerlink" title="功能"></a><strong>功能</strong></h3><ul>
+<li>托管DetailFragment</li>
+<li>传递数据WeatherID</li>
+</ul>
+<h3 id="知识点：FragmentAugment实现"><a href="#知识点：FragmentAugment实现" class="headerlink" title="知识点：FragmentAugment实现"></a>知识点：<code>FragmentAugment</code>实现</h3><p><code>**DetailActivity</code>获取数据并传递给其托管的Fragment的两种方法**</p>
+<ul>
+<li><strong>直接获取数据，直接传递——由Activity获取数据</strong></li>
+</ul>
+<p><code>UUID</code>是<code>Serializable</code>对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.activity_detail);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取intent传入的信息</span></span><br><span class="line">    weatherId = (UUID) getIntent().getSerializableExtra(EXTRA_WEATHER_ID);</span><br><span class="line">		<span class="comment">//绑定Fragment</span></span><br><span class="line">    <span class="type">FragmentManager</span> <span class="variable">fm</span> <span class="operator">=</span> getSupportFragmentManager();</span><br><span class="line">    <span class="type">Fragment</span> <span class="variable">fragment</span> <span class="operator">=</span> fm.findFragmentById(R.id.fragment_container3);</span><br><span class="line">    <span class="keyword">if</span> (fragment == <span class="literal">null</span>) &#123;</span><br><span class="line">        fragment = createFragment();</span><br><span class="line">        fm.beginTransaction()</span><br><span class="line">                .add(R.id.fragment_container3, fragment)</span><br><span class="line">                .commit();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="comment">//创建Fragment</span></span><br><span class="line">    <span class="keyword">private</span> Fragment <span class="title function_">createFragment</span><span class="params">()</span> &#123;</span><br><span class="line">				<span class="comment">//直接传递数据</span></span><br><span class="line">        <span class="keyword">return</span> DetailFragment.newInstance(weatherId);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>缺点：</strong></p>
+<p>破坏了**<code>CrimeFragment</code><strong>的封装，</strong><code>CrimeFragment</code>**不再是可以复用的单元。</p>
+<ul>
+<li><strong>使用<code>fragmentargument</code>——由Fragment获取数据</strong></li>
+</ul>
+<p><strong>augment：参数</strong></p>
+<p>将<code>weatherID</code>存储到<code>Fragment</code>的某个地方而不是<code>Activity</code>中。</p>
+<p>每个<code>Fragment</code>实例都有一个**<code>Bundle</code><strong>对象，</strong><code>Bundle</code>**对象包含键值对，可以将参数添加到<code>**Bundle**</code>对象中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//附加augmentbundle给Fragment</span></span><br><span class="line">Fragment.setArguments(Bundle)</span><br><span class="line"><span class="comment">//Bundle添加argument</span></span><br><span class="line">Bundle.putSerializable(Key,Value)</span><br></pre></td></tr></table></figure>
+
+<h2 id="5、PagerActivity"><a href="#5、PagerActivity" class="headerlink" title="5、PagerActivity"></a>5、PagerActivity</h2><h3 id="功能-3"><a href="#功能-3" class="headerlink" title="功能"></a><strong>功能</strong></h3><ul>
+<li>实现左右滑动屏幕</li>
+</ul>
+<h3 id="知识点：ViewPager实现"><a href="#知识点：ViewPager实现" class="headerlink" title="知识点：ViewPager实现"></a>知识点：<code>ViewPager</code>实现</h3><p><strong>步骤：</strong></p>
+<ul>
+<li>创建<code>PagerActivity</code>类，以<code>VeiwPager</code>为根视图</li>
+<li>定义包含<code>ViewPager</code>的视图层级结构</li>
+<li>在<code>PagerActivity</code>类中关联使用<code>ViewPager</code>及其<code>Adapter</code></li>
+</ul>
+<h3 id="Bug"><a href="#Bug" class="headerlink" title="Bug"></a>Bug</h3><p>只能显示6天的Pager</p>
+<p>Bug修复：我把数据库课WetherLab封装在一起了</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PagerActivity</span> <span class="keyword">extends</span> <span class="title class_">AppCompatActivity</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">EXTRA_WEATHER_ID</span> <span class="operator">=</span> <span class="string">&quot;com/example/weatherbroadcast/DetailActivity.java.weather_id&quot;</span>;</span><br><span class="line">    <span class="keyword">private</span> ViewPager mViewPager;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Weather&gt; mWeathers;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//启动PagerActivity并传递参数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Intent <span class="title function_">newIntent</span><span class="params">(Context packageContext, UUID weathereId)</span> &#123;</span><br><span class="line">        <span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Intent</span>(packageContext, PagerActivity.class);</span><br><span class="line">        intent.putExtra(EXTRA_WEATHER_ID, weathereId);</span><br><span class="line">        <span class="keyword">return</span> intent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_pager);</span><br><span class="line"></span><br><span class="line">        mViewPager = (ViewPager) findViewById(R.id.view_pager);</span><br><span class="line">        mWeathers = WeatherLab.get(<span class="built_in">this</span>).getWeathers();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取intent传入的信息</span></span><br><span class="line">        <span class="type">UUID</span> <span class="variable">weatherId</span> <span class="operator">=</span> (UUID) getIntent().getSerializableExtra(EXTRA_WEATHER_ID);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置点击之后显示的界面</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; mWeathers.size(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mWeathers.get(i).getId().equals(weatherId)) &#123;</span><br><span class="line">                mViewPager.setCurrentItem(i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//创建Adapter</span></span><br><span class="line">            <span class="type">FragmentManager</span> <span class="variable">fragmentManager</span> <span class="operator">=</span> getSupportFragmentManager();</span><br><span class="line">            mViewPager.setAdapter(<span class="keyword">new</span> <span class="title class_">FragmentStatePagerAdapter</span>(fragmentManager) &#123;</span><br><span class="line">                <span class="meta">@NonNull</span></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> Fragment <span class="title function_">getItem</span><span class="params">(<span class="type">int</span> position)</span> &#123;</span><br><span class="line">                    <span class="type">Weather</span> <span class="variable">weather</span> <span class="operator">=</span> mWeathers.get(position);</span><br><span class="line">                    <span class="comment">//实例化DetailFragment</span></span><br><span class="line">                    <span class="keyword">return</span> DetailFragment.newInstance(weather.getId());</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getCount</span><span class="params">()</span> &#123;</span><br><span class="line">                    Log.e(<span class="string">&quot;mWeathers.size : &quot;</span>, String.valueOf(mWeathers.size()));</span><br><span class="line">                    <span class="keyword">return</span> mWeathers.size();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6、SQLlite-WeatherLab单例封装"><a href="#6、SQLlite-WeatherLab单例封装" class="headerlink" title="6、SQLlite+WeatherLab单例封装"></a>6、SQLlite+WeatherLab单例封装</h2><h3 id="功能-4"><a href="#功能-4" class="headerlink" title="功能"></a><strong>功能</strong></h3><ul>
+<li><strong>实现数据持久化</strong></li>
+</ul>
+<h3 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h3><ul>
+<li><strong>单例如何实例化？</strong></li>
+</ul>
+<p><strong>在类中声明为静态变量并且实例化。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WeatherLab</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> WeatherLab sWeatherLab;</span><br><span class="line">    <span class="keyword">private</span> SQLiteDatabase mDatabase;</span><br><span class="line">    <span class="keyword">private</span> Context mContext;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//单例的意思：在类里已经实例化了</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> WeatherLab <span class="title function_">get</span><span class="params">(Context context)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (sWeatherLab == <span class="literal">null</span>) &#123;</span><br><span class="line">            sWeatherLab = <span class="keyword">new</span> <span class="title class_">WeatherLab</span>(context);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sWeatherLab;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>这里将数据库也实现单例</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Context <span class="title function_">getContext</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sWeatherLab.mContext;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">WeatherLab</span><span class="params">(Context context)</span> &#123;</span><br><span class="line">        mContext = context.getApplicationContext();</span><br><span class="line">        <span class="comment">//打开数据库，如果不存在就先调用DataBaseHelper.onCreate()创建</span></span><br><span class="line">        mDatabase = <span class="keyword">new</span> <span class="title class_">DatabaseHelper</span>(mContext).getWritableDatabase();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>实现数据库<code>Schema</code>类：定义描述数据表元素的String常量</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DbSchema</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">class</span> <span class="title class_">WeatherTable</span> &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">NAME</span> <span class="operator">=</span> <span class="string">&quot;WeatherTab&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">class</span> <span class="title class_">Cols</span> &#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">UUID</span> <span class="operator">=</span> <span class="string">&quot;uuid&quot;</span>;</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">TITLE</span> <span class="operator">=</span> <span class="string">&quot;title&quot;</span>;</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">DATE</span> <span class="operator">=</span> <span class="string">&quot;date&quot;</span>;</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">SOLVED</span> <span class="operator">=</span> <span class="string">&quot;solved&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>DataBaseHelper类</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DatabaseHelper</span> <span class="keyword">extends</span> <span class="title class_">SQLiteOpenHelper</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">VERSION</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String DBNAME=<span class="string">&quot;User.db&quot;</span>;   <span class="comment">//  创建数据库名叫 Users</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">DatabaseHelper</span><span class="params">(Context context)</span>&#123;</span><br><span class="line">        <span class="built_in">super</span>(context,DBNAME,<span class="literal">null</span>,VERSION);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(SQLiteDatabase db)</span> &#123;</span><br><span class="line">        <span class="comment">//db.execSQL(&quot;create table WeatherTable (_id INTEGER PRIMARY KEY AUTOINCREMENT,date text,max_temp text,min_temp text,weather text,humidity text,pressure text,wind text,icon text)&quot;);</span></span><br><span class="line">        db.execSQL(<span class="string">&quot;create table &quot;</span>+ NAME+<span class="string">&quot;(&quot;</span>+</span><br><span class="line">                    <span class="string">&quot;_id INTEGER PRIMARY KEY AUTOINCREMENT,&quot;</span>+</span><br><span class="line">                    DbSchema.Cols.UUID+<span class="string">&quot; text, &quot;</span>+</span><br><span class="line">                    DbSchema.Cols.DATE+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DbSchema.Cols.MAX_TEMP+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DbSchema.Cols.MIN_TEMP+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DbSchema.Cols.WEATHER+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DbSchema.Cols.HUMIDITY+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DbSchema.Cols.PRESSURE+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DbSchema.Cols.WIND+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DbSchema.Cols.ICON+<span class="string">&quot; text&quot;</span>+</span><br><span class="line">                    <span class="string">&quot;)&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onUpgrade</span><span class="params">(SQLiteDatabase db, <span class="type">int</span> oldVersion, <span class="type">int</span> newVersion)</span> &#123;</span><br><span class="line">        <span class="comment">//TODO</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>修改WeatherLab：改用数据库存储数据</strong></p>
+<ul>
+<li><strong>实现<code>CursorWrapper</code>子类帮助查询数据库</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建Cursor子类用于查询</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WeatherCursorWrapper</span> <span class="keyword">extends</span> <span class="title class_">CursorWrapper</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">WeatherCursorWrapper</span><span class="params">(Cursor cursor)</span> &#123;</span><br><span class="line">            <span class="built_in">super</span>(cursor);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> Weather <span class="title function_">getWeather</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">UUID</span> <span class="operator">=</span> getString(getColumnIndex(DatabaseHelper.DbSchema.Cols.UUID));</span><br><span class="line">            <span class="type">String</span> <span class="variable">DATE</span> <span class="operator">=</span> getString(getColumnIndex(DatabaseHelper.DbSchema.Cols.DATE));</span><br><span class="line">            <span class="type">String</span> <span class="variable">MAX_TEMP</span> <span class="operator">=</span> getString(getColumnIndex(DatabaseHelper.DbSchema.Cols.MAX_TEMP));</span><br><span class="line">            <span class="type">String</span> <span class="variable">MIN_TEMP</span> <span class="operator">=</span> getString(getColumnIndex(DatabaseHelper.DbSchema.Cols.MIN_TEMP));</span><br><span class="line">            <span class="type">String</span> <span class="variable">WEATHER</span> <span class="operator">=</span> getString(getColumnIndex(DatabaseHelper.DbSchema.Cols.WEATHER));</span><br><span class="line">            <span class="type">String</span> <span class="variable">HUMIDITY</span> <span class="operator">=</span> getString(getColumnIndex(DatabaseHelper.DbSchema.Cols.HUMIDITY));</span><br><span class="line">            <span class="type">String</span> <span class="variable">PRESSURE</span> <span class="operator">=</span> getString(getColumnIndex(DatabaseHelper.DbSchema.Cols.PRESSURE));</span><br><span class="line">            <span class="type">String</span> <span class="variable">WIND</span> <span class="operator">=</span> getString(getColumnIndex(DatabaseHelper.DbSchema.Cols.WIND));</span><br><span class="line">            <span class="type">String</span> <span class="variable">ICON</span> <span class="operator">=</span> getString(getColumnIndex(DatabaseHelper.DbSchema.Cols.ICON));</span><br><span class="line"></span><br><span class="line">            <span class="type">Weather</span> <span class="variable">weather</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Weather</span>();</span><br><span class="line">            weather.setId(java.util.UUID.fromString(UUID));</span><br><span class="line">            weather.setDate(DATE);</span><br><span class="line">            weather.setMaxTemperature(MAX_TEMP);</span><br><span class="line">            weather.setMinTemperature(MIN_TEMP);</span><br><span class="line">            weather.setWeather(WEATHER);</span><br><span class="line">            weather.setHumidity(HUMIDITY);</span><br><span class="line">            weather.setPressure(PRESSURE);</span><br><span class="line">            weather.setWind(WIND);</span><br><span class="line">            weather.setIconUrl(ICON);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> weather;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实例化WeatherCursorWrapper </span></span><br><span class="line"><span class="type">WeatherCursorWrapper</span> <span class="variable">cursor</span> <span class="operator">=</span> queryWeathers(<span class="literal">null</span>, <span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>**ContentValues</code>:键值储存类，只能处理SQLite数据**</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ContentValues:键值储存类，只能处理SQLite数据</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ContentValues <span class="title function_">getContentValues</span><span class="params">(Weather weather)</span> &#123;</span><br><span class="line">        <span class="type">ContentValues</span> <span class="variable">values</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ContentValues</span>();</span><br><span class="line">        values.put(DatabaseHelper.DbSchema.Cols.UUID, weather.getId().toString());</span><br><span class="line">        values.put(DatabaseHelper.DbSchema.Cols.DATE, weather.getDate());</span><br><span class="line">        values.put(DatabaseHelper.DbSchema.Cols.MAX_TEMP, weather.getMaxTemperature());</span><br><span class="line">        values.put(DatabaseHelper.DbSchema.Cols.MIN_TEMP, weather.getMinTemperature());</span><br><span class="line">        values.put(DatabaseHelper.DbSchema.Cols.WEATHER, weather.getWeather());</span><br><span class="line">        values.put(DatabaseHelper.DbSchema.Cols.HUMIDITY, weather.getHumidity());</span><br><span class="line">        values.put(DatabaseHelper.DbSchema.Cols.PRESSURE, weather.getPressure());</span><br><span class="line">        values.put(DatabaseHelper.DbSchema.Cols.WIND, weather.getWind());</span><br><span class="line">        values.put(DatabaseHelper.DbSchema.Cols.ICON, weather.getIconUrl());</span><br><span class="line">        <span class="keyword">return</span> values;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>删除数据库之后记得立马要<code>create</code>一个，不然<code>quary</code>报错</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//判断数据库是否为空</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isEmpty</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">WeatherCursorWrapper</span> <span class="variable">cursor</span> <span class="operator">=</span> queryWeathers(<span class="literal">null</span>, <span class="literal">null</span>);</span><br><span class="line">        <span class="keyword">return</span> cursor.getCount()==<span class="number">0</span>||cursor==<span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//如果数据库不为空</span></span><br><span class="line">        <span class="keyword">if</span>(!sWeatherLab.isEmpty())&#123;</span><br><span class="line">            mDatabase.execSQL(<span class="string">&quot;drop table &quot;</span>+DatabaseHelper.DbSchema.NAME);</span><br><span class="line">            mDatabase.execSQL(<span class="string">&quot;create table &quot;</span>+ NAME+<span class="string">&quot;(&quot;</span>+</span><br><span class="line">                    <span class="string">&quot;_id INTEGER PRIMARY KEY AUTOINCREMENT,&quot;</span>+</span><br><span class="line">                    DatabaseHelper.DbSchema.Cols.UUID+<span class="string">&quot; text, &quot;</span>+</span><br><span class="line">                    DatabaseHelper.DbSchema.Cols.DATE+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DatabaseHelper.DbSchema.Cols.MAX_TEMP+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DatabaseHelper.DbSchema.Cols.MIN_TEMP+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DatabaseHelper.DbSchema.Cols.WEATHER+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DatabaseHelper.DbSchema.Cols.HUMIDITY+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DatabaseHelper.DbSchema.Cols.PRESSURE+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DatabaseHelper.DbSchema.Cols.WIND+<span class="string">&quot; text,&quot;</span>+</span><br><span class="line">                    DatabaseHelper.DbSchema.Cols.ICON+<span class="string">&quot; text&quot;</span>+</span><br><span class="line">                    <span class="string">&quot;)&quot;</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="报错-table-WeatherTab-has-no-column-named-min-temp"><a href="#报错-table-WeatherTab-has-no-column-named-min-temp" class="headerlink" title="报错 table WeatherTab has no column named min_temp"></a>报错 <strong>table WeatherTab has no column named min_temp</strong></h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/WeatherBroadcast/image-20230528112458417.png" alt="image-20230528112458417"></p>
+<p><strong>table WeatherTab has no column named min_temp in “INSERT INTO WeatherTab(min_temp,pressure,date,icon,uuid,wind,max_temp,humidity,weather) VALUES (?,?,?,?,?,?,?,?,?)”</strong></p>
+<p><strong>原因：数据表创建语句中字段前没有空格</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013040819/article/details/81489137">table xxx has no column named id (code 1)？表中插入数据找不到字段？_奋斗的IT小民工的博客-CSDN博客</a></p>
+<h2 id="7、Share功能"><a href="#7、Share功能" class="headerlink" title="7、Share功能"></a>7、Share功能</h2><h3 id="功能-5"><a href="#功能-5" class="headerlink" title="功能"></a><strong>功能</strong></h3><ul>
+<li><strong>点击Menu分享键分享天气</strong></li>
+</ul>
+<h3 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a><strong>知识点</strong></h3><ul>
+<li><strong>隐式Intent的组成</strong><ul>
+<li>要执行的操作</li>
+<li>待访问数据的位置</li>
+<li>操作涉及的数据类型</li>
+<li>可选类别</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> R.id.share:</span><br><span class="line">                <span class="comment">//Intent.ACTION_SEND:要执行的操作</span></span><br><span class="line">                <span class="type">Intent</span> <span class="variable">i</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Intent</span>(Intent.ACTION_SEND);</span><br><span class="line">                <span class="comment">//操作涉及的数据类型</span></span><br><span class="line">                i.setType(<span class="string">&quot;text/plain&quot;</span>);</span><br><span class="line">                <span class="comment">//待访问数据的位置</span></span><br><span class="line">                i.putExtra(Intent.EXTRA_TEXT,createMessage());</span><br><span class="line">                startActivity(i);</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8、Notification——IntentService的子类"><a href="#8、Notification——IntentService的子类" class="headerlink" title="8、Notification——IntentService的子类"></a>8、Notification——<strong>IntentService的子类</strong></h2><h3 id="功能-6"><a href="#功能-6" class="headerlink" title="功能"></a><strong>功能</strong></h3><ul>
+<li>定期发送通知给用户，显示在状态栏中</li>
+<li>保证用户在使用应用时不出现新结果通知</li>
+</ul>
+<h3 id="知识点-4"><a href="#知识点-4" class="headerlink" title="知识点"></a><strong>知识点</strong></h3><ul>
+<li><p><strong>后台服务：IntentService</strong></p>
+</li>
+<li><p><strong>SharedPreferences：保存数据（location、unit）</strong></p>
+</li>
+<li><p><strong>AlarmManager延迟运行</strong></p>
+</li>
+<li><p><strong>通知消息：Notification</strong></p>
+</li>
+<li><p><strong>Broadcast Intent</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/WeatherBroadcast/image-20230528112524704.png" alt="image-20230528112524704"></p>
+</li>
+</ul>
+<h3 id="后台服务：IntentService"><a href="#后台服务：IntentService" class="headerlink" title="后台服务：IntentService"></a><strong>后台服务：IntentService</strong></h3><ul>
+<li>创建**<code>IntentService</code>**类继承<code>IntentService</code></li>
+<li><code>manifest</code>中配置<code>&lt;service android:name=&quot;.Notification&quot;&gt;&lt;/service&gt;</code></li>
+</ul>
+<p>注意构造函数不能带参数</p>
+<ul>
+<li>在<code>MainFragment</code>的<code>onCreate()</code>中添加服务启动代码</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//启动Notification服务</span></span><br><span class="line">        <span class="type">Intent</span> <span class="variable">i</span> <span class="operator">=</span> Notification.newIntent(getActivity());</span><br><span class="line">        getActivity().startService(i);</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/WeatherBroadcast/image-20230528112547986.png" alt="image-20230528112547986"></p>
+<ul>
+<li><p><strong>IntentService</strong>在没有<code>activity</code>运行的情况下为<strong>在后台运行的服务</strong>，需要想个办法启动它。</p>
+<p>使用**<code>AlarmManager</code>：可以发送intent的系统服务**</p>
+<p>使用<code>PendingIntent</code>打包一个<code>intent</code>:”我想启动Notification服务”</p>
+<p>在<code>PendingIntent</code>中实现一个启停定时器的<code>setServiceAlarm()</code></p>
+<ul>
+<li><strong>添加定时方法</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置时间间隔是1分钟</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">NOTI_INTERVAL_MS</span> <span class="operator">=</span> TimeUnit.MINUTES.toMillis(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">setServiceAlarm</span><span class="params">(Context context,<span class="type">boolean</span> isOn)</span>&#123;</span><br><span class="line">        <span class="type">Intent</span> <span class="variable">i</span> <span class="operator">=</span> Notification.newIntent(context);</span><br><span class="line">        <span class="comment">//创建一个用来启动Notification服务的PendingIntent</span></span><br><span class="line">        <span class="type">PendingIntent</span> <span class="variable">pendingIntent</span> <span class="operator">=</span> PendingIntent.getService(context,<span class="number">0</span>,i,FLAG_MUTABLE);</span><br><span class="line">        <span class="comment">//设置定时器</span></span><br><span class="line">        <span class="type">AlarmManager</span> <span class="variable">alarmManager</span> <span class="operator">=</span> (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);</span><br><span class="line">        <span class="keyword">if</span>(isOn)&#123;</span><br><span class="line">            alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime(),NOTI_INTERVAL_MS,pendingIntent);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            alarmManager.cancel(pendingIntent);</span><br><span class="line">            pendingIntent.cancel();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用<code>PendingIntent</code>管理定时器</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isServiceAlarmOn</span><span class="params">(Context context)</span>&#123;</span><br><span class="line">        <span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> NotificationService.newIntent(context);</span><br><span class="line">        <span class="type">PendingIntent</span> <span class="variable">pendingIntent</span> <span class="operator">=</span> PendingIntent.getService(context,<span class="number">0</span>,intent,PendingIntent.FLAG_NO_CREATE);</span><br><span class="line">        <span class="keyword">return</span> pendingIntent!=<span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在<code>MainFragment</code>中设置定时开&#x2F;闭</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onResume</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="built_in">super</span>.onResume();</span><br><span class="line">  <span class="type">SharedPreferences</span> <span class="variable">pref</span> <span class="operator">=</span> getActivity().getSharedPreferences(<span class="string">&quot;set&quot;</span>, MODE_PRIVATE);</span><br><span class="line">  <span class="type">String</span> <span class="variable">send</span> <span class="operator">=</span> pref.getString(<span class="string">&quot;send&quot;</span>,<span class="string">&quot;是&quot;</span>);</span><br><span class="line">  <span class="keyword">if</span> (send==<span class="string">&quot;是&quot;</span>)&#123;</span><br><span class="line">      <span class="comment">//开启后台服务，启动定时器，发送通知消息</span></span><br><span class="line">      NotificationService.setServiceAlarm(getActivity(),<span class="literal">true</span>);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      NotificationService.setServiceAlarm(getActivity(),<span class="literal">false</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Notification"><a href="#Notification" class="headerlink" title="Notification"></a>Notification</h3><ul>
+<li>创建<code>Notification</code>对象</li>
+</ul>
+<p>完整的<code>notification</code>包括：</p>
+<ul>
+<li>首次显示通知消息时，在状态栏上显示ticker text、图标</li>
+<li>在Lollipop之后状态栏上不显示ticker text、图标</li>
+<li>是通知抽屉的一个视图</li>
+<li>待触发的<code>PendingIntent</code>，用户点击抽屉中的通知消息触发</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onHandleIntent</span><span class="params">(<span class="meta">@Nullable</span> Intent intent)</span> &#123;</span><br><span class="line">        Log.e(TAG,<span class="string">&quot;接收一个intent：&quot;</span>+intent);</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    设置通知消息</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">        <span class="type">Resources</span> <span class="variable">resources</span> <span class="operator">=</span> getResources();</span><br><span class="line">        <span class="type">Intent</span> <span class="variable">i</span> <span class="operator">=</span> MainActivity.newIntent(<span class="built_in">this</span>);</span><br><span class="line">				<span class="comment">//不可变的PendingIntent</span></span><br><span class="line">        <span class="type">PendingIntent</span> <span class="variable">pendingIntent</span> <span class="operator">=</span> PendingIntent.getActivity(<span class="built_in">this</span>,<span class="number">0</span>,i,FLAG_IMMUTABLE);</span><br><span class="line">        <span class="type">Notification</span> <span class="variable">notification</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        NotificationCompat.<span class="type">Builder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NotificationCompat</span>.Builder(<span class="built_in">this</span>)</span><br><span class="line">                .setTicker(resources.getString(R.string.new_weather_title))</span><br><span class="line">                .setSmallIcon(android.R.drawable.ic_menu_report_image)</span><br><span class="line">                .setContentTitle(resources.getString(R.string.new_weather_title))</span><br><span class="line">                .setContentText(resources.getString(R.string.new_weather_text))</span><br><span class="line">                .setContentIntent(pendingIntent)</span><br><span class="line">                .setAutoCancel(<span class="literal">true</span>);</span><br><span class="line">        <span class="type">NotificationManager</span> <span class="variable">notificationManager</span> <span class="operator">=</span>(NotificationManager) getSystemService(NOTIFICATION_SERVICE);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//一定要设置channel</span></span><br><span class="line">        <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.O) &#123;</span><br><span class="line">            <span class="type">NotificationChannel</span> <span class="variable">channel</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NotificationChannel</span>(<span class="string">&quot;to-do&quot;</span></span><br><span class="line">                    , <span class="string">&quot;待办消息&quot;</span>,</span><br><span class="line">                    NotificationManager.IMPORTANCE_HIGH);</span><br><span class="line">            channel.enableVibration(<span class="literal">true</span>);</span><br><span class="line">            channel.setVibrationPattern(<span class="keyword">new</span> <span class="title class_">long</span>[]&#123;<span class="number">500</span>&#125;);</span><br><span class="line">            notificationManager.createNotificationChannel(channel);</span><br><span class="line">            builder.setChannelId(<span class="string">&quot;to-do&quot;</span>);</span><br><span class="line">            notification = builder.build();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            notification = builder.build();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        notificationManager.notify(<span class="number">0</span>,notification);</span><br><span class="line">        System.out.println(notification);</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4c51c071aa94">浅谈通知频道NotificationChannel</a></p>
+<p>从Android8.0开始，应用显示通知时，必须为通知指定一个<code>Channel</code>。</p>
+<p><code>NotificationChannel</code>构造方法需要三个参数，</p>
+<ul>
+<li><code>ChannelId</code>是自定义的字符串</li>
+<li>第二个参数是频道的名称</li>
+<li>第三个是优先级。</li>
+</ul>
+<p>创建完<code>NotificationChannel</code>之后，还需要使用<code>createNotificationChannels</code>方法注册到系统中。</p>
+<h3 id="Broadcast-Intent（待实现）"><a href="#Broadcast-Intent（待实现）" class="headerlink" title="Broadcast Intent（待实现）"></a><strong>Broadcast Intent（待实现）</strong></h3><h2 id="9、Map功能"><a href="#9、Map功能" class="headerlink" title="9、Map功能"></a>9、Map功能</h2><h3 id="功能-7"><a href="#功能-7" class="headerlink" title="功能"></a><strong>功能</strong></h3><ul>
+<li><strong>点击MapLocation启动手机中的Map</strong></li>
+</ul>
+<h3 id="知识点-5"><a href="#知识点-5" class="headerlink" title="知识点"></a><strong>知识点</strong></h3><ul>
+<li><strong>隐式Intent的组成</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Intent</span>(Intent.ACTION_VIEW);</span><br><span class="line"><span class="type">Uri</span> <span class="variable">geoLocation</span> <span class="operator">=</span> Uri.parse(<span class="string">&quot;geo:28.156198193290255,112.93207570910455?z=11&quot;</span>);</span><br><span class="line">intent.setData(geoLocation);</span><br><span class="line"><span class="keyword">if</span> (intent.resolveActivity(getContext().getPackageManager()) != <span class="literal">null</span>) &#123;</span><br><span class="line">    startActivity(intent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Bug-1"><a href="#Bug-1" class="headerlink" title="Bug"></a>Bug</h3><p>MapApp无法显示定位</p>
+</article><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="/img/paycode.png" target="_blank"><img class="post-qr-code-img" src="/img/paycode.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://cocobronie.cn/2023/05/28/WeatherBroadcast/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=一个天气预报APP&amp;url=http://cocobronie.cn/2023/05/28/WeatherBroadcast/&amp;pic=/2023/05/28/WeatherBroadcast/mycover.png" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/Android-APP/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Android APP<span class="tagsPageCount">3</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="/2023/06/18/TreasureinLife/mycover.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://npm.elemecdn.com/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://npm.elemecdn.com/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div></div><div class="post-copyright"><i class="anzhiyufont anzhiyu-icon-copyright"></i><div class="post-copyright__author"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://cocobronie.cn/2023/05/28/WeatherBroadcast/">原创</a><a class="post-copyright-title"><span>一个天气预报APP</span></a></div><div class="post-copyright-info-box"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"></span><a class="link" href="http://cocobronie.cn">Cocobronie</a></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a class="link" href="http://cocobronie.cn/2023/05/28/WeatherBroadcast/">http://cocobronie.cn/2023/05/28/WeatherBroadcast/</a></span><span class="copy-button" onclick="rm.copyPageUrl()"><i class="anzhiyufont anzhiyu-icon-copy"></i></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://cocobronie.cn" target="_blank">Cocobronie Bolg</a>！</span></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/05/28/GitNote/"><img class="prev-cover" src="/2023/05/28/GitNote/mycover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Git踩坑记录</div></div></a></div><div class="next-post pull-right"><a href="/2023/05/28/CardSpending/"><img class="next-cover" src="/2023/05/28/CardSpending/mycover.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">一个校园卡消费充值APP</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/05/28/CardSpending/" title="一个校园卡消费充值APP"><img class="cover" src="/2023/05/28/CardSpending/mycover.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-05-28</div><div class="title">一个校园卡消费充值APP</div></div></a></div><div><a href="/2023/05/28/myNFC/" title="简单的NFC读写器APP"><img class="cover" src="/2023/05/28/myNFC/mycover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-05-28</div><div class="title">简单的NFC读写器APP</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author-info-top"> <div class="card-info-avatar"><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="writing_hand" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/270d.png">✍️</g-emoji><span>on Studying</span></div></div></div></div><div class="author-info__sayhi" id="author-info__sayhi"></div><h1 class="author-info__name">Cocobronie</h1><div class="author-info__description">但行好事，莫问前程</div><div class="banner-button-group"><a class="banner-button" onclick="pjax.loadUrl(&quot;/about/&quot;)"><span class="banner-button-text">了解更多</span><i class="anzhiyufont anzhiyu-icon-arrow-circle-right" style="font-size: 1.5rem"></i></a></div><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/Cocobronie" target="_blank" title="Github"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-github"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=161717572@qq.com" target="_blank" title="Email"><i class="anzhiyufont anzhiyu-icon-qq"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Weather-Broadcast-APP"><span class="toc-number">1.</span> <span class="toc-text">Weather Broadcast APP</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%86%E9%A2%91%E5%B1%95%E7%A4%BA"><span class="toc-number">2.</span> <span class="toc-text">视频展示</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="toc-number">3.</span> <span class="toc-text">一、主要功能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E4%B8%BB%E8%A7%86%E5%9B%BE%E5%92%8C%E7%BB%86%E8%8A%82%E8%A7%86%E5%9B%BE"><span class="toc-number">3.1.</span> <span class="toc-text">1、主视图和细节视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81-%E6%94%AF%E6%8C%81%E5%B9%B3%E6%9D%BF%E6%98%BE%E7%A4%BA"><span class="toc-number">3.2.</span> <span class="toc-text">2、 支持平板显示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E4%B8%BB%E8%A7%86%E5%9B%BE%E8%8F%9C%E5%8D%95%E6%A0%8F%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.3.</span> <span class="toc-text">3、主视图菜单栏功能实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E7%BB%86%E8%8A%82%E8%A7%86%E5%9B%BE%E8%8F%9C%E5%8D%95%E6%A0%8F%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.4.</span> <span class="toc-text">4、细节视图菜单栏功能实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81SQLite%E5%AF%B9%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E6%8C%81%E4%B9%85%E5%8C%96%E4%BF%9D%E5%AD%98"><span class="toc-number">3.5.</span> <span class="toc-text">5、SQLite对天气预报数据进行持久化保存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E8%B0%83%E7%94%A8Web-API%E8%8E%B7%E5%8F%96%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">3.6.</span> <span class="toc-text">6、调用Web API获取天气预报数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%BC%80%E5%8F%91%E7%BB%86%E8%8A%82"><span class="toc-number">4.</span> <span class="toc-text">二、开发细节</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81UI%E8%AE%BE%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.1.</span> <span class="toc-text">1、UI设设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81MainActivity-%E5%B9%B3%E6%9D%BF%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.2.</span> <span class="toc-text">2、MainActivity+平板功能实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">4.2.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">4.2.2.</span> <span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fragment%E5%9B%9E%E8%B0%83%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.2.3.</span> <span class="toc-text">Fragment回调接口的实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81MainFragment"><span class="toc-number">4.3.</span> <span class="toc-text">3、MainFragment</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-1"><span class="toc-number">4.3.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-1"><span class="toc-number">4.3.2.</span> <span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A6%81%E7%82%B9"><span class="toc-number">4.3.3.</span> <span class="toc-text">要点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81DetailActivity"><span class="toc-number">4.4.</span> <span class="toc-text">4、DetailActivity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-2"><span class="toc-number">4.4.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%9AFragmentAugment%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.4.2.</span> <span class="toc-text">知识点：FragmentAugment实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81PagerActivity"><span class="toc-number">4.5.</span> <span class="toc-text">5、PagerActivity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-3"><span class="toc-number">4.5.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%9AViewPager%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.5.2.</span> <span class="toc-text">知识点：ViewPager实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bug"><span class="toc-number">4.5.3.</span> <span class="toc-text">Bug</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">4.5.4.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81SQLlite-WeatherLab%E5%8D%95%E4%BE%8B%E5%B0%81%E8%A3%85"><span class="toc-number">4.6.</span> <span class="toc-text">6、SQLlite+WeatherLab单例封装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-4"><span class="toc-number">4.6.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-2"><span class="toc-number">4.6.2.</span> <span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%A5%E9%94%99-table-WeatherTab-has-no-column-named-min-temp"><span class="toc-number">4.6.3.</span> <span class="toc-text">报错 table WeatherTab has no column named min_temp</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E3%80%81Share%E5%8A%9F%E8%83%BD"><span class="toc-number">4.7.</span> <span class="toc-text">7、Share功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-5"><span class="toc-number">4.7.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-3"><span class="toc-number">4.7.2.</span> <span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="toc-number">4.7.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E3%80%81Notification%E2%80%94%E2%80%94IntentService%E7%9A%84%E5%AD%90%E7%B1%BB"><span class="toc-number">4.8.</span> <span class="toc-text">8、Notification——IntentService的子类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-6"><span class="toc-number">4.8.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-4"><span class="toc-number">4.8.2.</span> <span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%EF%BC%9AIntentService"><span class="toc-number">4.8.3.</span> <span class="toc-text">后台服务：IntentService</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Notification"><span class="toc-number">4.8.4.</span> <span class="toc-text">Notification</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Broadcast-Intent%EF%BC%88%E5%BE%85%E5%AE%9E%E7%8E%B0%EF%BC%89"><span class="toc-number">4.8.5.</span> <span class="toc-text">Broadcast Intent（待实现）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9%E3%80%81Map%E5%8A%9F%E8%83%BD"><span class="toc-number">4.9.</span> <span class="toc-text">9、Map功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-7"><span class="toc-number">4.9.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9-5"><span class="toc-number">4.9.2.</span> <span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bug-1"><span class="toc-number">4.9.3.</span> <span class="toc-text">Bug</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/06/18/TreasureinLife/" title="生命中的那些宝藏"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/06/18/TreasureinLife/mycover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="生命中的那些宝藏"/></a><div class="content"><a class="title" href="/2023/06/18/TreasureinLife/" title="生命中的那些宝藏">生命中的那些宝藏</a><time datetime="2023-06-18T13:09:38.000Z" title="发表于 2023-06-18 21:09:38">2023-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/18/100things/" title="人生中必做的 100 件事"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/06/18/100things/mycover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="人生中必做的 100 件事"/></a><div class="content"><a class="title" href="/2023/06/18/100things/" title="人生中必做的 100 件事">人生中必做的 100 件事</a><time datetime="2023-06-18T13:07:56.000Z" title="发表于 2023-06-18 21:07:56">2023-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/30/vitepressNote/" title="vitepress构建我的笔记页面"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vitepress构建我的笔记页面"/></a><div class="content"><a class="title" href="/2023/05/30/vitepressNote/" title="vitepress构建我的笔记页面">vitepress构建我的笔记页面</a><time datetime="2023-05-29T16:15:03.000Z" title="发表于 2023-05-30 00:15:03">2023-05-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/28/dumiNote/" title="用dumi创建一个属于自己的组件库！"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/05/28/dumiNote/mycover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用dumi创建一个属于自己的组件库！"/></a><div class="content"><a class="title" href="/2023/05/28/dumiNote/" title="用dumi创建一个属于自己的组件库！">用dumi创建一个属于自己的组件库！</a><time datetime="2023-05-28T11:06:05.000Z" title="发表于 2023-05-28 19:06:05">2023-05-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/28/myNFC/" title="简单的NFC读写器APP"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/05/28/myNFC/mycover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="简单的NFC读写器APP"/></a><div class="content"><a class="title" href="/2023/05/28/myNFC/" title="简单的NFC读写器APP">简单的NFC读写器APP</a><time datetime="2023-05-28T06:15:21.000Z" title="发表于 2023-05-28 14:15:21">2023-05-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By Cocobronie</div><div id="workboard"><img class="workSituationImg boardsign" src="/img/red.svg" alt="呼~浅浅休息一下吧！" title="呼~浅浅休息一下吧！"/><div id="runtimeTextTip"></div></div></div></footer></div></div></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/img/avatar.jpg"/><div class="loading-image-dot"></div><div id="loading-percentage">0%</div></div></div><script>const loadingPercentage = document.getElementById("loading-percentage");
+let loadingPercentageTimer = setInterval(function() {
+  var progressBar = document.querySelector(".pace-progress");
+  if (!progressBar) return
+  var currentValue = progressBar.getAttribute("data-progress-text");
+  if (currentValue !== loadingPercentage.textContent) {
+    loadingPercentage.textContent = currentValue;
+    if (currentValue === "100%") {
+      clearInterval(loadingPercentageTimer);
+    }
+  }
+}, 100);
+const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+    Pace.restart()
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/progress_bar/progress_bar.css"/><script async="async" src="https://npm.elemecdn.com/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div id="sidebar"><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">1</div></a></div></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="center-console" type="button" title="中控台"><i class="anzhiyufont anzhiyu-icon-fish"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><div id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()">播放音乐</div><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="console"><div class="close-btn" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-xmark" style="font-size: 35px;"></i></div><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/img/paycode.png" target="_blank"><img class="post-qr-code-img" alt="wechat" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/paycode.png"/></a><div class="post-qr-code-desc">wechat</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="anzhiyu.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> <span>最新评论</span></span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="anzhiyu.hideConsole()"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Android-APP/" style="font-size: 1.05rem;">Android APP<sup>3</sup></a><a href="/tags/Git/" style="font-size: 1.05rem;">Git<sup>1</sup></a><a href="/tags/config/" style="font-size: 1.05rem;">config<sup>1</sup></a><a href="/tags/life/" style="font-size: 1.05rem;">life<sup>2</sup></a><a href="/tags/vitepress/" style="font-size: 1.05rem;">vitepress<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96-react/" style="font-size: 1.05rem;">前端工程化 react<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history" onclick="anzhiyu.hideConsole()"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">7</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="anzhiyu.switchDarkMode()" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="anzhiyu.switchCommentBarrage()" title="热评开关"><a class="commentBarrage"><i class="anzhiyufont anzhiyu-icon-message"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div><div class="console-btn-item" id="consoleKeyboard" onclick="anzhiyu.keyboardToggle()" title="快捷键开关"><a class="keyboard-switch"><i class="anzhiyufont anzhiyu-icon-keyboard"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.2.1/source/js/utils.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.2.1/source/js/main.js"></script><script src="https://npm.elemecdn.com/hexo-theme-anzhiyu@1.2.1/source/js/tw_cn.js"></script><script src="https://npm.elemecdn.com/@fancyapps/ui@4.0.31/dist/fancybox.umd.js"></script><script src="https://npm.elemecdn.com/instant.page@5.1.1/instantpage.js" type="module"></script><script src="https://npm.elemecdn.com/vanilla-lazyload@17.3.1/dist/lazyload.iife.min.js"></script><script src="https://npm.elemecdn.com/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("05/25/2023 17:26:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2023 By 安知鱼 1.2.1",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      "color:#3b70fc",
+      "",
+      "color:#3b70fc",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Cocobronie 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script async="async">(function () {
+  var grt = new Date("05/25/2023 17:26:00"); //设置网站上线时间
+  var now = new Date();
+  var dnum;
+  var hnum;
+  var mnum;
+  var snum;
+  var nowHour;
+
+  // 计算并更新天数、小时数、分钟数和秒数
+  function updateTime() {
+    now = new Date(); // 更新 now 的值
+    nowHour = now.getHours(); // 更新 nowHour 的值
+    var days = (now - grt) / 1000 / 60 / 60 / 24;
+    dnum = Math.floor(days);
+    var hours = (now - grt) / 1000 / 60 / 60 - 24 * dnum;
+    hnum = Math.floor(hours);
+    if (String(hnum).length == 1) {
+      hnum = "0" + hnum;
+    }
+    var minutes = (now - grt) / 1000 / 60 - 24 * 60 * dnum - 60 * hnum;
+    mnum = Math.floor(minutes);
+    if (String(mnum).length == 1) {
+      mnum = "0" + mnum;
+    }
+    var seconds = (now - grt) / 1000 - 24 * 60 * 60 * dnum - 60 * 60 * hnum - 60 * mnum;
+    snum = Math.round(seconds);
+    if (String(snum).length == 1) {
+      snum = "0" + snum;
+    }
+  }
+
+  // 更新网页中显示的网站运行时间
+  function updateHtml() {
+    const footer = document.getElementById("footer");
+    if (!footer) return
+    let currentTimeHtml = "";
+    if (nowHour < 18 && nowHour >= 9) {
+      // 如果是上班时间，默认就是"安知鱼-上班摸鱼中.svg"图片，不需要更改
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    } else {
+      // 如果是下班时间，插入"安知鱼-下班啦.svg"图片
+      let img = document.querySelector("#workboard .workSituationImg");
+      img.src = "/img/green.svg";
+      img.title = "太难了真的好难家人们！";
+      img.alt = "太难了真的好难家人们！";
+
+      currentTimeHtml = `本站居然运行了 ${dnum} 天<span id='runtime'> ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span><i class='anzhiyufont anzhiyu-icon-heartbeat' style='color:red'></i>`;
+    }
+
+    if (document.getElementById("runtimeTextTip")) {
+      document.getElementById("runtimeTextTip").innerHTML = currentTimeHtml;
+    }
+  }
+
+  setInterval(() => {
+    updateTime();
+    updateHtml();
+  }, 1000);
+})();</script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://npm.elemecdn.com/mermaid@9.1.7/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.1/bubble/bubble.js"></script><script>var visitorMail = "visitor@anzhiy.cn";</script><script>//动态标题
+let leaveTitle = 'w(ﾟДﾟ)w 不要走！再看看嘛！';
+let backTitle = '♪(^∇^*)欢迎肥来！';
+let OriginTitile = document.title
+let titleTime
+document.addEventListener('visibilitychange', function () {
+  if (document.hidden) {
+    //离开当前页面时标签显示内容
+    document.title = leaveTitle
+    clearTimeout(titleTime)
+  } else {
+    //返回当前页面时标签显示内容
+    document.title = backTitle + OriginTitile
+    //两秒后变回正常标题
+    titleTime = setTimeout(function () {
+      document.title = OriginTitile
+    }, 2000)
+  }
+})</script><script async data-pjax src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><script>// 初始化函数
+let rm = {};
+
+//禁止图片与超链接拖拽
+let aElements = document.getElementsByTagName("a");
+for (let i = 0; i < aElements.length; i++) {
+  aElements[i].setAttribute("draggable", "false");
+  let imgElements = aElements[i].getElementsByTagName("img");
+  for (let j = 0; j < imgElements.length; j++) {
+    imgElements[j].setAttribute("draggable", "false");
+  }
+}
+
+// 显示菜单
+rm.showRightMenu = function (isTrue, x = 0, y = 0) {
+  console.info(x, y)
+  let rightMenu = document.getElementById("rightMenu");
+  rightMenu.style.top = x + "px";
+  rightMenu.style.left = y + "px";
+  if (isTrue) {
+    rightMenu.style.display = "block";
+    stopMaskScroll();
+  } else {
+    rightMenu.style.display = "none";
+  }
+};
+
+// 隐藏菜单
+rm.hideRightMenu = function () {
+  rm.showRightMenu(false);
+  let rightMenuMask = document.querySelector("#rightmenu-mask");
+  rightMenuMask.style.display = "none";
+};
+
+// 尺寸
+let rmWidth = document.getElementById("rightMenu").offsetWidth;
+let rmHeight = document.getElementById("rightMenu").offsetHeight;
+
+// 重新定义尺寸
+rm.reloadrmSize = function () {
+  rightMenu.style.visibility = "hidden";
+  rightMenu.style.display = "block";
+  // 获取宽度和高度
+  rmWidth = document.getElementById("rightMenu").offsetWidth;
+  rmHeight = document.getElementById("rightMenu").offsetHeight;
+  rightMenu.style.visibility = "visible";
+};
+
+// 获取点击的href
+let domhref = "";
+let domImgSrc = "";
+let globalEvent = null;
+
+var oncontextmenuFunction = function (event) {
+  if (document.body.clientWidth > 768) {
+    let pageX = event.clientX + 10; //加10是为了防止显示时鼠标遮在菜单上
+    let pageY = event.clientY;
+
+    //其他额外菜单
+    const $rightMenuOther = document.querySelector(".rightMenuOther");
+    const $rightMenuPlugin = document.querySelector(".rightMenuPlugin");
+    const $rightMenuCopyText = document.querySelector("#menu-copytext");
+    const $rightMenuPasteText = document.querySelector("#menu-pastetext");
+    const $rightMenuCommentText = document.querySelector("#menu-commenttext");
+    const $rightMenuNewWindow = document.querySelector("#menu-newwindow");
+    const $rightMenuNewWindowImg = document.querySelector("#menu-newwindowimg");
+    const $rightMenuCopyLink = document.querySelector("#menu-copylink");
+    const $rightMenuCopyImg = document.querySelector("#menu-copyimg");
+    const $rightMenuDownloadImg = document.querySelector("#menu-downloadimg");
+    const $rightMenuSearch = document.querySelector("#menu-search");
+    const $rightMenuSearchBaidu = document.querySelector("#menu-searchBaidu");
+    const $rightMenuMusicToggle = document.querySelector("#menu-music-toggle");
+    const $rightMenuMusicBack = document.querySelector("#menu-music-back");
+    const $rightMenuMusicForward = document.querySelector("#menu-music-forward");
+    const $rightMenuMusicPlaylist = document.querySelector("#menu-music-playlist");
+    const $rightMenuMusicCopyMusicName = document.querySelector("#menu-music-copyMusicName");
+
+    let href = event.target.href;
+    let imgsrc = event.target.currentSrc;
+
+    // 判断模式 扩展模式为有事件
+    let pluginMode = false;
+    $rightMenuOther.style.display = "block";
+    globalEvent = event;
+
+    // 检查是否需要复制 是否有选中文本
+    if (selectTextNow && window.getSelection()) {
+      pluginMode = true;
+      $rightMenuCopyText.style.display = "block";
+      $rightMenuCommentText.style.display = "block";
+      $rightMenuSearch.style.display = "block";
+      $rightMenuSearchBaidu.style.display = "block";
+    } else {
+      $rightMenuCopyText.style.display = "none";
+      $rightMenuCommentText.style.display = "none";
+      $rightMenuSearchBaidu.style.display = "none";
+      $rightMenuSearch.style.display = "none";
+    }
+
+    //检查是否右键点击了链接a标签
+    if (href) {
+      pluginMode = true;
+      $rightMenuNewWindow.style.display = "block";
+      $rightMenuCopyLink.style.display = "block";
+      domhref = href;
+    } else {
+      $rightMenuNewWindow.style.display = "none";
+      $rightMenuCopyLink.style.display = "none";
+    }
+
+    //检查是否需要复制图片
+    if (imgsrc) {
+      pluginMode = true;
+      $rightMenuCopyImg.style.display = "block";
+      $rightMenuDownloadImg.style.display = "block";
+      $rightMenuNewWindowImg.style.display = "block";
+      document.getElementById("rightMenu").style.width="12rem"
+      domImgSrc = imgsrc;
+    } else {
+      $rightMenuCopyImg.style.display = "none";
+      $rightMenuDownloadImg.style.display = "none";
+      $rightMenuNewWindowImg.style.display = "none";
+    }
+
+    // 判断是否为输入框
+    if (event.target.tagName.toLowerCase() === "input" || event.target.tagName.toLowerCase() === "textarea") {
+      pluginMode = true;
+      $rightMenuPasteText.style.display = "block";
+    } else {
+      $rightMenuPasteText.style.display = "none";
+    }
+    const navMusicEl = document.querySelector("#nav-music");
+    //判断是否是音乐
+    if (navMusicEl && navMusicEl.contains(event.target)) {
+      pluginMode = true;
+      $rightMenuMusicToggle.style.display = "block";
+      $rightMenuMusicBack.style.display = "block";
+      $rightMenuMusicForward.style.display = "block";
+      $rightMenuMusicPlaylist.style.display = "block";
+      $rightMenuMusicCopyMusicName.style.display = "block";
+    } else {
+      $rightMenuMusicToggle.style.display = "none";
+      $rightMenuMusicBack.style.display = "none";
+      $rightMenuMusicForward.style.display = "none";
+      $rightMenuMusicPlaylist.style.display = "none";
+      $rightMenuMusicCopyMusicName.style.display = "none";
+    }
+
+    // 如果不是扩展模式则隐藏扩展模块
+    if (pluginMode) {
+      $rightMenuOther.style.display = "none";
+      $rightMenuPlugin.style.display = "block";
+    } else {
+      $rightMenuPlugin.style.display = "none";
+    }
+
+    rm.reloadrmSize();
+
+    // 鼠标默认显示在鼠标右下方，当鼠标靠右或靠下时，将菜单显示在鼠标左方\上方
+    if (pageX + rmWidth > window.innerWidth) {
+      pageX -= rmWidth + 10;
+    }
+    if (pageY + rmHeight > window.innerHeight) {
+      pageY -= pageY + rmHeight - window.innerHeight;
+    }
+
+    rm.showRightMenu(true, pageY, pageX);
+    document.getElementById("rightmenu-mask").style.display = "flex";
+    return false;
+  }
+};
+
+// 监听右键初始化
+window.oncontextmenu = oncontextmenuFunction
+
+// 下载图片状态
+rm.downloadimging = false;
+
+// 复制图片到剪贴板
+rm.writeClipImg = function (imgsrc) {
+  console.log("按下复制");
+  rm.hideRightMenu();
+  anzhiyu.snackbarShow("正在下载中，请稍后", false, 10000);
+  if (rm.downloadimging == false) {
+    rm.downloadimging = true;
+    setTimeout(function () {
+      copyImage(imgsrc);
+      anzhiyu.snackbarShow("复制成功！图片已添加盲水印，请遵守版权协议");
+      rm.downloadimging = false;
+    }, "10000");
+  }
+};
+
+function imageToBlob(imageURL) {
+  const img = new Image();
+  const c = document.createElement("canvas");
+  const ctx = c.getContext("2d");
+  img.crossOrigin = "";
+  img.src = imageURL;
+  return new Promise(resolve => {
+    img.onload = function () {
+      c.width = this.naturalWidth;
+      c.height = this.naturalHeight;
+      ctx.drawImage(this, 0, 0);
+      c.toBlob(
+        blob => {
+          // here the image is a blob
+          resolve(blob);
+        },
+        "image/png",
+        0.75
+      );
+    };
+  });
+}
+
+async function copyImage(imageURL) {
+  const blob = await imageToBlob(imageURL);
+  const item = new ClipboardItem({ "image/png": blob });
+  navigator.clipboard.write([item]);
+}
+
+rm.copyUrl = function (id) {
+  const input = document.createElement("input"); // Create a new <input> element
+  input.id = "copyVal"; // Set the id of the new element to "copyVal"
+  document.body.appendChild(input); // Append the new element to the end of the <body> element
+  
+  const text = id;
+  input.value = text;
+  input.select();
+  input.setSelectionRange(0, input.value.length);
+  document.execCommand("copy");
+  
+  input.remove(); // Remove the <input> element from the DOM
+};
+
+function stopMaskScroll() {
+  if (document.getElementById("rightmenu-mask")) {
+    let xscroll = document.getElementById("rightmenu-mask");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      false
+    );
+  }
+  if (document.getElementById("rightMenu")) {
+    let xscroll = document.getElementById("rightMenu");
+    xscroll.addEventListener(
+      "mousewheel",
+      function (e) {
+        //阻止浏览器默认方法
+        rm.hideRightMenu();
+        // e.preventDefault();
+      },
+      false
+    );
+  }
+}
+
+rm.rightmenuCopyText = function (txt) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(txt);
+  }
+  rm.hideRightMenu();
+};
+
+rm.copyPageUrl = function () {
+  var url = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+rm.sharePage = function () {
+  var content = window.location.href;
+  rm.copyUrl(url);
+  anzhiyu.snackbarShow("复制本页链接地址成功", false, 2000);
+  rm.hideRightMenu();
+};
+
+// 复制当前选中文本
+var selectTextNow = "";
+document.onmouseup = document.ondblclick = selceText;
+
+function selceText() {
+  var txt;
+  if (document.selection) {
+    txt = document.selection.createRange().text;
+  } else {
+    txt = window.getSelection().toString();
+  }
+  selectTextNow = txt !== "" ? txt : "";
+}
+
+// 读取剪切板
+rm.readClipboard = function () {
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(clipText => rm.insertAtCaret(globalEvent.target, clipText));
+  }
+};
+
+// 粘贴文本到焦点
+rm.insertAtCaret = function (elemt, value) {
+  const startPos = elemt.selectionStart,
+    endPos = elemt.selectionEnd;
+  if (document.selection) {
+    elemt.focus();
+    var sel = document.selection.createRange();
+    sel.text = value;
+    elemt.focus();
+  } else {
+    if (startPos || startPos == "0") {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length);
+      elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      elemt.value += value;
+      elemt.focus();
+    }
+  }
+};
+
+//粘贴文本
+rm.pasteText = function () {
+  const result = rm.readClipboard() || "";
+  rm.hideRightMenu();
+};
+
+//引用到评论
+rm.rightMenuCommentText = function (txt) {
+  rm.hideRightMenu();
+  const postCommentDom = document.getElementById("post-comment");
+  var domTop = postCommentDom.offsetTop;
+  window.scrollTo(0, domTop - 80);
+  if (txt == "undefined" || txt == "null") txt = "好棒！";
+  function setText() {
+    setTimeout(() => {
+      var input = document.getElementsByClassName("el-textarea__inner")[0];
+      if (!input) setText();
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("input", true, true);
+      let inputValue = replaceAll(txt, "\n", "\n> ");
+      input.value = "> " + inputValue + "\n\n";
+      input.dispatchEvent(evt);
+      input.focus();
+      input.setSelectionRange(-1, -1);
+      if (document.getElementById("comment-tips")) {
+        document.getElementById("comment-tips").classList.add("show");
+      }
+    }, 100);
+  }
+  setText();
+};
+
+//替换所有内容
+function replaceAll(string, search, replace) {
+  return string.split(search).join(replace);
+}
+
+// 百度搜索
+rm.searchBaidu = function () {
+  anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+  setTimeout(function () {
+    window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+  }, "2000");
+  rm.hideRightMenu();
+};
+
+//分享链接
+rm.copyLink = function () {
+  rm.rightmenuCopyText(domhref);
+  anzhiyu.snackbarShow("已复制链接地址");
+};
+
+function addRightMenuClickEvent() {
+  // 添加点击事件
+  document.getElementById("menu-backward").addEventListener("click", function () {
+  window.history.back();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-forward").addEventListener("click", function () {
+    window.history.forward();
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-refresh").addEventListener("click", function () {
+    window.location.reload();
+  });
+
+  document.getElementById("menu-top").addEventListener("click", function () {
+    anzhiyu.scrollToDest(0, 500);
+    rm.hideRightMenu();
+  });
+
+  const menuLinks = document.querySelectorAll(".menu-link");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", rm.hideRightMenu);
+  });
+
+  document.getElementById("menu-darkmode").addEventListener("click", anzhiyu.switchDarkMode);
+
+  document.getElementById("menu-home") && document.getElementById("menu-home").addEventListener("click", function () {
+    window.location.href = window.location.origin;
+  });
+
+  document.getElementById("menu-randomPost").addEventListener("click", function () {
+    toRandomPost();
+  });
+
+  document.getElementById("menu-commentBarrage").addEventListener("click", anzhiyu.switchCommentBarrage);
+
+  document.getElementById("rightmenu-mask").addEventListener("click", rm.hideRightMenu);
+
+  document.getElementById("rightmenu-mask").addEventListener("contextmenu", function (event) {
+    rm.hideRightMenu();
+    event.preventDefault(); // Prevent the default context menu from appearing
+  });
+
+  document.getElementById("menu-copy").addEventListener("click", rm.copyPageUrl);
+
+  document.getElementById("menu-pastetext").addEventListener("click", rm.pasteText);
+
+  document.getElementById("menu-copytext").addEventListener("click", function () {
+    rm.rightmenuCopyText(selectTextNow);
+    anzhiyu.snackbarShow("复制成功，复制和转载请标注本文地址");
+  });
+
+  document.getElementById("menu-commenttext").addEventListener("click", function () {
+    rm.rightMenuCommentText(selectTextNow);
+  });
+
+  document.getElementById("menu-newwindow").addEventListener("click", function () {
+    window.open(domhref);
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copylink").addEventListener("click", rm.copyLink);
+
+  document.getElementById("menu-downloadimg").addEventListener("click", function () {
+    anzhiyu.downloadImage(domImgSrc, "anzhiyu");
+  });
+
+  document.getElementById("menu-newwindowimg").addEventListener("click", function () {
+    window.open(domImgSrc);
+    rm.hideRightMenu();
+  });
+
+  document.getElementById("menu-copyimg").addEventListener("click", function () {
+    rm.writeClipImg(domImgSrc);
+  });
+
+  document.getElementById("menu-searchBaidu").addEventListener("click", rm.searchBaidu);
+
+  //音乐
+  document.getElementById("menu-music-toggle").addEventListener("click", anzhiyu.musicToggle);
+
+  document.getElementById("menu-music-back").addEventListener("click", anzhiyu.musicSkipBack);
+
+  document.getElementById("menu-music-forward").addEventListener("click", anzhiyu.musicSkipForward);
+
+  document.getElementById("menu-music-copyMusicName").addEventListener("click", function () {
+    rm.rightmenuCopyText(anzhiyu.musicGetName());
+    anzhiyu.snackbarShow("复制歌曲名称成功", false, 3000);
+  });
+
+}
+
+addRightMenuClickEvent();</script><script data-pjax>var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+var pageHeaderEl = document.getElementById("page-header");
+var navMusicEl = document.getElementById("nav-music");
+var consoleEl = document.getElementById("console");
+// 已随机的歌曲
+var selectRandomSong = [];
+// 音乐默认声音大小
+var musicVolume = 0.8;
+// 是否切换了周杰伦音乐列表
+var changeMusicListFlag = false;
+// 当前默认播放列表
+var defaultPlayMusicList = [];
+
+document.getElementById("page-name").innerText = document.title.split(" | 安知鱼")[0];
+anzhiyu.initIndexEssay();
+anzhiyu.changeTimeInEssay();
+anzhiyu.removeBodyPaceClass();
+anzhiyu.qrcodeCreate();
+anzhiyu.changeTimeInAlbumDetail();
+anzhiyu.reflashEssayWaterFall();
+anzhiyu.sayhi();
+anzhiyu.stopImgRightDrag();
+anzhiyu.addNavBackgroundInit();
+anzhiyu.setValueToBodyType();
+anzhiyu.catalogActive();
+anzhiyu.tagsPageActive();
+anzhiyu.categoriesBarActive();
+anzhiyu.topCategoriesBarScroll();
+
+anzhiyu.getCustomPlayList();
+anzhiyu.addEventListenerConsoleMusicList(false);
+setTimeout(() => {
+  if (typeof addFriendLinksInFooter === "function") {
+    addFriendLinksInFooter();
+  }
+}, 200)</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.1.0/icon/ali_iconfont_css.css"><script async src="//at.alicdn.com/t/c/font_4088630_4nnp6hchq29.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://npm.elemecdn.com/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://npm.elemecdn.com/butterfly-extsrc@1.1.3/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://npm.elemecdn.com/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

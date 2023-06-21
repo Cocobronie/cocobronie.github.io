@@ -1,0 +1,1 @@
+var posts=["2023/06/18/TreasureinLife/","2023/06/18/100things/","2023/05/28/dumiNote/","2023/05/28/GitNote/","2023/05/28/CardSpending/","2023/05/28/WeatherBroadcast/","2023/05/28/myNFC/","2023/05/26/hexoConfigNote/","2023/05/30/vitepressNote/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
